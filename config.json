@@ -1,0 +1,13 @@
+{
+  "schoolName": "โรงเรียนพุทธมงคลวิทยา",
+  "teacherName": "ครูวิรุฬห์ สิทธิเขตรกรณ์",
+  "courseCode": "ว21102",
+  "courseName": "วิทยาศาสตร์และเทคโนโลยี 2",
+  "academicYear": "2569",
+  "semester": 2,
+  "baseUrl": "https://wirunsit.github.io/science1/",
+  "slideFont": "Sarabun",
+  "slideFontFallback": "Leelawadee UI",
+  "worksheetFont": "TH Sarabun New",
+  "worksheetFontSizePt": 16
+}

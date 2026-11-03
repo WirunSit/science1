@@ -1,0 +1,9 @@
+node_modules/
+test-results/
+playwright-report/
+slides/out/
+worksheets/out/
+dist/
+materials/teacher/
+tests/screenshots/
+.claude/

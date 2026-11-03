@@ -1,0 +1,156 @@
+{
+  "$comment": "ค่าคงที่หน่วย 6 ลมฟ้าอากาศ ทุกค่ามี source และ verified; verified:false = รอครูเทียบกับหนังสือเรียน",
+  "airComposition": {
+    "verified": false,
+    "source": "องค์ประกอบอากาศแห้งโดยปริมาตร ค่าอ้างอิงทั่วไป (แผนข้อ 7.2)",
+    "unit": "%",
+    "items": [
+      { "id": "nitrogen", "name": "ไนโตรเจน", "value": 78.08 },
+      { "id": "oxygen", "name": "ออกซิเจน", "value": 20.95 },
+      { "id": "argon", "name": "อาร์กอน", "value": 0.93 },
+      { "id": "co2", "name": "คาร์บอนไดออกไซด์", "value": 0.04 },
+      { "id": "others", "name": "แก๊สอื่น ๆ", "value": 0.00 }
+    ],
+    "waterVaporRange": { "min": 0, "max": 4, "unit": "%" }
+  },
+  "standardAtmosphere": {
+    "verified": false,
+    "source": "U.S. Standard Atmosphere 1976 (ค่าเหนือ 86 km เป็นค่าประมาณ แปรผันตามกิจกรรมดวงอาทิตย์)",
+    "interpolation": "linear (อุณหภูมิ), log-linear (ความดัน)",
+    "points": [
+      { "altitudeKm": 0, "temperatureC": 15.0, "pressureHpa": 1013.25 },
+      { "altitudeKm": 11, "temperatureC": -56.5, "pressureHpa": 226.3 },
+      { "altitudeKm": 20, "temperatureC": -56.5, "pressureHpa": 54.7 },
+      { "altitudeKm": 32, "temperatureC": -44.5, "pressureHpa": 8.68 },
+      { "altitudeKm": 47, "temperatureC": -2.5, "pressureHpa": 1.11 },
+      { "altitudeKm": 51, "temperatureC": -2.5, "pressureHpa": 0.67 },
+      { "altitudeKm": 71, "temperatureC": -58.5, "pressureHpa": 0.040 },
+      { "altitudeKm": 86, "temperatureC": -86.3, "pressureHpa": 0.0037 },
+      { "altitudeKm": 100, "temperatureC": -78, "pressureHpa": 3e-4, "approx": true },
+      { "altitudeKm": 120, "temperatureC": 87, "pressureHpa": 2.5e-5, "approx": true },
+      { "altitudeKm": 150, "temperatureC": 360, "pressureHpa": 4.5e-6, "approx": true },
+      { "altitudeKm": 200, "temperatureC": 580, "pressureHpa": 8.5e-7, "approx": true },
+      { "altitudeKm": 300, "temperatureC": 700, "pressureHpa": 8.8e-8, "approx": true },
+      { "altitudeKm": 500, "temperatureC": 725, "pressureHpa": 3.0e-9, "approx": true }
+    ]
+  },
+  "atmosphereLayers": {
+    "verified": false,
+    "source": "แผนข้อ 7.2",
+    "note": "ตรวจกับหนังสือว่าใช้ 4 ชั้น หรือรวมเอกโซสเฟียร์เป็นชั้นที่ 5 และขอบเขตความสูงที่หนังสือใช้",
+    "layers": [
+      { "id": "troposphere", "name": "โทรโพสเฟียร์", "topKm": 12, "topRangeKm": "≈ 10–12 (≈ 16–18 เหนือเส้นศูนย์สูตร, ≈ 8 ที่ขั้วโลก)", "trend": "ลดลงประมาณ 6.5 °C ต่อ 1 km" },
+      { "id": "stratosphere", "name": "สตราโตสเฟียร์", "topKm": 50, "trend": "คงที่ช่วงล่างแล้วเพิ่มขึ้น" },
+      { "id": "mesosphere", "name": "มีโซสเฟียร์", "topKm": 85, "trend": "ลดลง เย็นที่สุดราว −90 °C" },
+      { "id": "thermosphere", "name": "เทอร์โมสเฟียร์", "topKm": null, "trend": "เพิ่มขึ้นสูงมาก แต่อากาศเบาบางมาก" }
+    ]
+  },
+  "environmentalLapseRate": { "name": "อัตราอุณหภูมิลดลงตามความสูงในโทรโพสเฟียร์", "value": 6.5, "unit": "°C/km", "verified": false, "source": "แผนข้อ 7.2" },
+  "referenceObjects": {
+    "verified": false,
+    "source": "แผนข้อ 7.2 (ค่าโดยประมาณ)",
+    "items": [
+      { "id": "everest", "name": "ยอดเขาเอเวอเรสต์", "altitudeKm": 8.8 },
+      { "id": "airliner", "name": "เครื่องบินพาณิชย์", "altitudeKm": [10, 12] },
+      { "id": "weatherBalloon", "name": "บอลลูนตรวจอากาศ", "altitudeKm": [30, 35] },
+      { "id": "ozoneLayer", "name": "ชั้นโอโซน (หนาแน่นสุด)", "altitudeKm": [20, 30] },
+      { "id": "meteors", "name": "ดาวตกลุกไหม้", "altitudeKm": [70, 100] },
+      { "id": "karmanLine", "name": "เส้นคาร์มาน (ขอบอวกาศตามธรรมเนียม)", "altitudeKm": 100 },
+      { "id": "aurora", "name": "แสงออโรรา", "altitudeKm": [100, 300] },
+      { "id": "iss", "name": "สถานีอวกาศนานาชาติ", "altitudeKm": 400 }
+    ]
+  },
+  "humidity": {
+    "magnus": { "name": "สูตร Magnus: es(T) = a·exp(b·T/(c+T)) hPa", "a": 6.112, "b": 17.62, "c": 243.12, "verified": false, "source": "สูตร Magnus (WMO) — แผนข้อ 7.2" },
+    "vaporDensityFactor": { "name": "ρv = ค่านี้ × e / (T + 273.15) g/m³", "value": 216.7, "unit": "g·K/(m³·hPa)", "verified": false, "source": "กฎแก๊สอุดมคติสำหรับไอน้ำ — แผนข้อ 7.2", "note": "ใช้ 273.15 ภายในสูตรฟิสิกส์ ไม่แสดงต่อนักเรียน" },
+    "psychrometerCoefficient": { "name": "A ในสูตรไฮโกรมิเตอร์ e = es(Tw) − A·P·(T − Tw)", "value": 6.66e-4, "unit": "/°C", "verified": false, "source": "ค่าไซโครมิเตอร์แบบมีการระบายอากาศ — แผนข้อ 7.2" },
+    "psychrometerPressure": { "name": "P ที่ใช้ในสูตรไฮโกรมิเตอร์", "value": 1013, "unit": "hPa", "verified": false, "source": "แผนข้อ 7.2" },
+    "saturationCheckpoints": {
+      "verified": false,
+      "source": "ค่าอิ่มตัวโดยประมาณสำหรับทดสอบ (แผนข้อ 7.2)",
+      "unit": "g/m³",
+      "points": [
+        { "temperatureC": 0, "value": 4.85 },
+        { "temperatureC": 10, "value": 9.4 },
+        { "temperatureC": 20, "value": 17.3 },
+        { "temperatureC": 25, "value": 23.0 },
+        { "temperatureC": 30, "value": 30.4 },
+        { "temperatureC": 35, "value": 39.6 }
+      ]
+    },
+    "hygrometerTable": { "value": null, "verified": false, "source": "รอครูป้อนตารางหาความชื้นสัมพัทธ์จากหนังสือเรียน", "note": "ถ้ายังเป็น null แล็บใช้ค่าจากสูตรและแสดงป้าย \"ค่าประมาณ\"" }
+  },
+  "sunlight": {
+    "$comment": "แบบจำลองพลังงานที่ผิวพื้นอย่างง่าย (Sun Angle, Wind Maker) ใช้เปรียบเทียบเท่านั้น",
+    "noonIrradiance": { "name": "พลังงานแสงอาทิตย์ที่ตกตั้งฉากบนพื้นตอนเที่ยงวันฟ้าโปร่ง", "value": 800, "unit": "W/m²", "verified": false, "source": "ค่าโดยประมาณในเขตร้อน (เพิ่มจากแผน)" },
+    "netLongwaveLoss": { "name": "ความร้อนที่พื้นคายออกเป็นรังสีสุทธิ (ตลอดวัน)", "value": 90, "unit": "W/m²", "verified": false, "source": "ค่าโดยประมาณ (เพิ่มจากแผน)" },
+    "airExchange": { "name": "การถ่ายโอนความร้อนระหว่างพื้นกับอากาศเหนือพื้น", "value": 12, "unit": "W/(m²·°C)", "verified": false, "source": "ค่าโดยประมาณ (เพิ่มจากแผน)" },
+    "cloudyLightFactor": { "name": "สัดส่วนแสงที่ผ่านเมฆมากลงถึงพื้น", "value": 0.4, "unit": "", "verified": false, "source": "ค่าโดยประมาณ (เพิ่มจากแผน)" },
+    "cloudyLongwaveFactor": { "name": "สัดส่วนรังสีที่พื้นคายออกไปได้เมื่อมีเมฆมาก", "value": 0.3, "unit": "", "verified": false, "source": "ค่าโดยประมาณ (เพิ่มจากแผน)", "note": "เมฆดูดกลืนและคายรังสีกลับลงมา กลางคืนจึงเย็นน้อยลง" },
+    "airTemperatureC": { "name": "อุณหภูมิอากาศเฉลี่ยของวัน", "value": 28, "unit": "°C", "verified": false, "source": "ค่าโดยประมาณของประเทศไทย (เพิ่มจากแผน)" }
+  },
+  "surfaces": {
+    "verified": false,
+    "source": "ค่าโดยประมาณเพื่อเปรียบเทียบ (แผนข้อ 10.2 ฉาก B) — ชั้นที่ร้อนขึ้นในหนึ่งวันหนาไม่กี่เซนติเมตรสำหรับพื้นดิน แต่น้ำผสมกันลึกกว่ามาก",
+    "note": "ความจุความร้อนต่อพื้นที่ = ความหนาแน่น × c × ความหนาชั้นที่ร้อนขึ้น; ส่วนที่ระเหย = สัดส่วนพลังงานที่ใช้ระเหยน้ำ (หญ้า น้ำ ดินชื้น)",
+    "items": [
+      { "id": "sand", "name": "ทราย", "absorptivity": 0.7, "density": 1600, "specificHeat": 830, "depthM": 0.05, "evaporation": 0 },
+      { "id": "soil", "name": "ดิน", "absorptivity": 0.75, "density": 1500, "specificHeat": 1200, "depthM": 0.05, "evaporation": 0.3 },
+      { "id": "grass", "name": "สนามหญ้า", "absorptivity": 0.75, "density": 1500, "specificHeat": 1200, "depthM": 0.05, "evaporation": 0.6 },
+      { "id": "water", "name": "น้ำ", "absorptivity": 0.9, "density": 1000, "specificHeat": 4200, "depthM": 1, "evaporation": 0.3 }
+    ]
+  },
+  "pressure": {
+    "seaLevelHpa": { "name": "ความกดอากาศมาตรฐานที่ระดับน้ำทะเล", "value": 1013.25, "unit": "hPa", "verified": false, "source": "บรรยากาศมาตรฐาน", "note": "= 760 mmHg; 1 hPa = 1 mb" },
+    "seaLevelMmHg": { "name": "ความกดอากาศมาตรฐานที่ระดับน้ำทะเล", "value": 760, "unit": "mmHg", "verified": false, "source": "บรรยากาศมาตรฐาน" }
+  },
+  "cloudModel": {
+    "dryLapseRate": { "name": "อากาศยกตัวเย็นลงก่อนอิ่มตัว", "value": 10, "unit": "°C/km", "verified": false, "source": "แบบจำลองอย่างง่าย (แผนข้อ 7.2)" },
+    "moistLapseRate": { "name": "อากาศเหนือฐานเมฆเย็นลง", "value": 6, "unit": "°C/km", "verified": false, "source": "แบบจำลองอย่างง่าย (แผนข้อ 7.2)" },
+    "cloudBaseFactor": { "name": "ความสูงฐานเมฆ ≈ ค่านี้ × (T − T_d)", "value": 125, "unit": "m/°C", "verified": false, "source": "แบบจำลองอย่างง่าย (แผนข้อ 7.2)" },
+    "mountainTopM": { "name": "ความสูงยอดเขาที่ลมพัดอากาศขึ้นไป (Cloud Lift)", "value": 3000, "unit": "m", "verified": false, "source": "ค่าที่ตั้งในแบบจำลอง (เพิ่มจากแผน)" },
+    "rainThicknessM": { "name": "เมฆหนาอย่างน้อยเท่านี้จึงมีฝนตก (กฎอย่างง่าย)", "value": 2000, "unit": "m", "verified": false, "source": "กฎอย่างง่ายเพื่อการเรียนรู้ (เพิ่มจากแผน)" }
+  },
+  "cloudLevels": {
+    "verified": false,
+    "source": "แผนข้อ 7.2 (โดยประมาณ เขตร้อนอาจสูงกว่านี้)",
+    "note": "ตรวจชื่อและการจัดกลุ่มเมฆกับหนังสือ",
+    "lowTopKm": 2,
+    "middleTopKm": 6
+  },
+  "precipitation": { "value": null, "verified": false, "source": "รอครู: ใช้นิยามและตัวอย่างหยาดน้ำฟ้าตามหนังสือ" },
+  "thaiSeasons": {
+    "verified": false,
+    "source": "กรมอุตุนิยมวิทยา (แผนข้อ 7.2)",
+    "items": [
+      { "id": "hot", "name": "ฤดูร้อน", "range": "≈ กลาง ก.พ. – กลาง พ.ค." },
+      { "id": "rainy", "name": "ฤดูฝน", "range": "≈ กลาง พ.ค. – กลาง ต.ค.", "driver": "มรสุมตะวันตกเฉียงใต้" },
+      { "id": "cool", "name": "ฤดูหนาว", "range": "≈ กลาง ต.ค. – กลาง ก.พ.", "driver": "มรสุมตะวันออกเฉียงเหนือ + ความกดอากาศสูงจากจีน" }
+    ]
+  },
+  "storms": {
+    "minSeaSurfaceTempC": { "name": "อุณหภูมิผิวน้ำทะเลต่ำสุดที่พายุหมุนเขตร้อนก่อตัว", "value": 26.5, "unit": "°C", "verified": false, "source": "แผนข้อ 7.2" },
+    "minLatitudeDeg": { "name": "ละติจูดต่ำสุดที่พายุหมุนได้", "value": 5, "unit": "°", "verified": false, "source": "แผนข้อ 7.2" },
+    "tropicalCycloneCategories": {
+      "verified": false,
+      "source": "การแบ่งระดับที่ใช้ในประเทศไทย (แผนข้อ 7.2)",
+      "note": "ตรวจค่าขอบเขต บางแหล่งเขียน 62/63, 117/118/119",
+      "unit": "km/h",
+      "items": [
+        { "id": "depression", "name": "พายุดีเปรสชัน", "minKmh": 0, "maxKmhExclusive": 63 },
+        { "id": "tropicalStorm", "name": "พายุโซนร้อน", "minKmh": 63, "maxKmhExclusive": 118 },
+        { "id": "typhoon", "name": "พายุไต้ฝุ่น", "minKmh": 118, "maxKmhExclusive": null }
+      ]
+    },
+    "thunderstormStages": {
+      "verified": false,
+      "source": "แผนข้อ 7.2",
+      "note": "ตรวจชื่อระยะกับหนังสือ",
+      "items": [
+        { "id": "developing", "name": "ระยะเริ่มก่อตัว" },
+        { "id": "mature", "name": "ระยะเติบโตเต็มที่" },
+        { "id": "dissipating", "name": "ระยะสลายตัว" }
+      ]
+    }
+  }
+}

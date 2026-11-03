@@ -1,0 +1,61 @@
+# ใบงานฝึกทักษะ U5C1-L4-P1 (แผนข้อ 8.4) — Q = mL และหลายช่วง 8 ข้อ + อ่านกราฟ 2 ข้อ
+# คำตอบคำนวณจาก constants ผ่าน {calc:...} (L_f, L_v, c น้ำแข็ง ยัง verified:false — ครูตรวจก่อนแจก)
+id: U5C1-L4-P1
+lesson: U5C1-L4
+type: P
+title: ใบงาน คำนวณความร้อนแฝงและความร้อนหลายช่วง
+qr: clip
+
+objectives:
+  - คำนวณความร้อนแฝงด้วย Q = mL และความร้อนที่ใช้หลายช่วงต่อเนื่อง
+  - "ใช้ค่า L ของการหลอมเหลวของน้ำแข็ง = {calc:heatForPhaseChange:1:L.fusionWater|J/kg}, L ของการกลายเป็นไอของน้ำ = {calc:heatForPhaseChange:1:L.vaporizationWater|J/kg}, c ของน้ำแข็ง = {c:ice}, c ของน้ำ = {c:water}"
+
+questions:
+  - section: ตอนที่ 1 ความร้อนแฝง Q = mL
+    q: น้ำแข็ง 2 kg ที่ 0 °C หลอมเหลวเป็นน้ำ 0 °C ทั้งหมด ใช้ความร้อนเท่าใด
+    level: นำไปใช้
+    lines: 2
+    answer: "Q = mL_f = 2 × L_f = {calc:heatForPhaseChange:2:L.fusionWater|J}"
+  - q: น้ำ 0.5 kg ที่ 100 °C กลายเป็นไอน้ำ 100 °C ทั้งหมด ใช้ความร้อนเท่าใด
+    level: นำไปใช้
+    lines: 2
+    answer: "Q = mL_v = 0.5 × L_v = {calc:heatForPhaseChange:0.5:L.vaporizationWater|J}"
+  - q: น้ำแข็ง 300 g ที่ 0 °C หลอมเหลวหมด ใช้ความร้อนเท่าใด
+    level: นำไปใช้
+    lines: 2
+    answer: "m = 0.3 kg, Q = 0.3 × L_f = {calc:heatForPhaseChange:0.3:L.fusionWater|J}"
+  - q: ไอน้ำ 20 g ที่ 100 °C ควบแน่นเป็นน้ำ 100 °C ทั้งหมด คายความร้อนเท่าใด
+    level: นำไปใช้
+    lines: 2
+    answer: "m = 0.02 kg, Q = 0.02 × L_v = {calc:heatForPhaseChange:0.02:L.vaporizationWater|J} (คายออก)"
+  - section: ตอนที่ 2 ความร้อนหลายช่วง (แบ่งช่วงตามกราฟ แล้วบวกกัน)
+    q: น้ำแข็ง 0.2 kg ที่ −5 °C ได้รับความร้อนจนเป็นน้ำ 0 °C ทั้งหมด ใช้ความร้อนรวมเท่าใด
+    level: วิเคราะห์
+    lines: 3
+    answer: "Q₁ = 0.2 × {cv:ice} × 5 = {calc:heatForTempChange:0.2:c.ice:5|J}, Q₂ = 0.2 × L_f = {calc:heatForPhaseChange:0.2:L.fusionWater|J} รวม = Q₁ + Q₂"
+  - q: น้ำแข็ง 0.1 kg ที่ 0 °C ได้รับความร้อนจนเป็นน้ำ 30 °C ใช้ความร้อนรวมเท่าใด
+    level: วิเคราะห์
+    lines: 3
+    answer: "Q₁ = 0.1 × L_f = {calc:heatForPhaseChange:0.1:L.fusionWater|J}, Q₂ = 0.1 × {cv:water} × 30 = {calc:heatForTempChange:0.1:c.water:30|J} รวม = Q₁ + Q₂"
+  - q: น้ำ 0.1 kg ที่ 80 °C ได้รับความร้อนจนเป็นไอน้ำ 100 °C ทั้งหมด ใช้ความร้อนรวมเท่าใด
+    level: วิเคราะห์
+    lines: 3
+    answer: "Q₁ = 0.1 × {cv:water} × 20 = {calc:heatForTempChange:0.1:c.water:20|J}, Q₂ = 0.1 × L_v = {calc:heatForPhaseChange:0.1:L.vaporizationWater|J} รวม = Q₁ + Q₂"
+  - q: ทำไมการคำนวณข้อ 7 จึงได้ความร้อนช่วงที่ 2 มากกว่าช่วงที่ 1 มาก
+    level: วิเคราะห์
+    lines: 2
+    answer: เพราะการเปลี่ยนน้ำเป็นไอน้ำใช้ความร้อนแฝงมาก มากกว่าความร้อนที่ใช้เพิ่มอุณหภูมิน้ำ 20 °C หลายสิบเท่า
+  - section: ตอนที่ 3 อ่านกราฟ (ใช้กราฟจากใบกิจกรรม W1 หรือ Heat Lab)
+    q: บนกราฟอุณหภูมิกับเวลาของน้ำแข็งที่ได้รับความร้อน ช่วงใดใช้ Q = mcΔt และช่วงใดใช้ Q = mL
+    level: เข้าใจ
+    lines: 2
+    answer: ช่วงที่อุณหภูมิเพิ่มขึ้น (ช่วงที่ 1, 3, 5) ใช้ Q = mcΔt ช่วงเส้นราบ (ช่วงที่ 2, 4) ใช้ Q = mL
+  - q: ถ้าเพิ่มมวลน้ำแข็งเป็น 2 เท่า โดยใช้เครื่องให้ความร้อนเดิม เส้นราบช่วงหลอมเหลวจะยาวขึ้นหรือสั้นลง กี่เท่า
+    level: วิเคราะห์
+    lines: 2
+    answer: ยาวขึ้น 2 เท่า เพราะ Q = mL มวล 2 เท่าต้องใช้ความร้อนแฝง 2 เท่า เมื่ออัตราให้ความร้อนเท่าเดิมจึงใช้เวลา 2 เท่า
+
+rubric:
+  - [ตอนที่ 1 ข้อละ 1 คะแนน, 4]
+  - [ตอนที่ 2 ข้อละ 2 คะแนน (แบ่งช่วงถูก 1 คำนวณถูก 1), 8]
+  - [ตอนที่ 3 ข้อละ 1 คะแนน, 2]

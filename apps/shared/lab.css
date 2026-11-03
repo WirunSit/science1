@@ -1,0 +1,1650 @@
+/* Shared styles for every Web Lab: 3 steps, one screen tall (PLAN §4.2–4.3). */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--glass);
+  outline-offset: 2px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+
+/* ── app frame: one screen tall, one step at a time, the page never scrolls (PLAN §4.3) ── */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.lab-app {
+  height: 100vh;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.lab-header {
+  background: var(--card);
+  border-bottom: 1px solid var(--rule);
+  padding: 6px 16px 0;
+}
+
+.lab-kicker {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.lab-title {
+  font-size: var(--fs-h1);
+}
+
+.steps {
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.step-btn {
+  width: 100%;
+  min-height: var(--touch);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 2px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.step-no {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  flex: none;
+}
+
+.step-btn[aria-current='step'] {
+  color: var(--glass);
+  border-bottom-color: var(--glass);
+  font-weight: 600;
+}
+
+.step-btn[aria-current='step'] .step-no {
+  background: var(--glass);
+  border-color: var(--glass);
+  color: var(--glass-ink);
+}
+
+.step-btn.done:not([aria-current='step']) .step-no {
+  background: var(--ok-soft);
+  border-color: var(--ok);
+  color: var(--ok);
+}
+
+.step-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.lab-stage {
+  min-height: 0;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+}
+
+.step-pane {
+  min-height: 0;
+  min-width: 0;
+  display: grid;
+  /* One column exactly the screen wide: a wide table scrolls inside its box instead of widening the page. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  padding: 8px 16px 10px;
+}
+
+/* Phone: everything in one column (PLAN §4.3); bench and graph share the room the table leaves. */
+.step-1 {
+  grid-template-rows: auto auto minmax(0, 1.2fr) minmax(0, 1fr) auto;
+  grid-template-areas: 'mission' 'todo' 'bench' 'graph' 'table';
+}
+
+.step-2 {
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas: 'table' 'quiz';
+}
+
+/* Several result tables (e.g. three scenes) must not squeeze the question away on a phone: they scroll. */
+.step-2 .table-slot {
+  max-height: 40vh;
+  overflow: auto;
+}
+
+.step-3 {
+  grid-template-rows: auto auto minmax(0, 1fr);
+  grid-template-areas: 'score' 'send' 'review';
+}
+
+.mission-row {
+  grid-area: mission;
+}
+
+.todo {
+  grid-area: todo;
+}
+
+.bench {
+  grid-area: bench;
+}
+
+.graph-slot {
+  grid-area: graph;
+  min-height: 0;
+}
+
+.table-slot {
+  grid-area: table;
+  min-height: 0;
+}
+
+.quiz-runner {
+  grid-area: quiz;
+}
+
+.score-box {
+  grid-area: score;
+}
+
+.send-box {
+  grid-area: send;
+}
+
+.review-box {
+  grid-area: review;
+}
+
+/* Short phones: the kicker (the link back to the list of experiments) stays, on one small line. */
+@media (max-height: 800px) and (max-width: 899px) {
+  .lab-header .lab-kicker {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+}
+
+
+/* Tablet landscape, computer, projector: two columns. */
+@media (min-width: 900px) {
+  .lab-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 560px);
+    align-items: end;
+    column-gap: 24px;
+    padding: 6px 24px 0;
+  }
+
+  .lab-header nav {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .lab-header .lab-kicker {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .lab-header .lab-title {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  /* Teacher mode: the tools button sits on the kicker's line, clear of the step bar on the right.
+     (.lab-app prefix: outranks the absolute placement defined later for small screens.) */
+  .lab-app .lab-header > button.badge {
+    position: static;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+    margin-top: 2px;
+  }
+
+  .step-pane {
+    gap: 14px 20px;
+    padding: 14px 24px 16px;
+  }
+
+  .step-1 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    grid-template-areas: 'bench mission' 'bench todo' 'bench graph' 'bench table';
+  }
+
+  .step-2 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-areas: 'table quiz';
+  }
+
+  .step-2 .table-slot {
+    align-self: start;
+    max-height: none;
+  }
+
+  .step-3 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-areas: 'score review' 'send review';
+  }
+
+  .step-3 .send-box {
+    align-self: start;
+  }
+}
+
+/* Big screens (projector): larger text so the back of the room can read it. */
+@media (min-width: 1600px) and (min-height: 900px) {
+  :root {
+    --scale: 1.3;
+  }
+}
+
+/* ── virtual bench (PLAN §4.2 step 1) ───────────────────── */
+.mission-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mission {
+  min-width: 0; /* a flex item: without this, long chips widen the whole page */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  font-size: var(--fs-small);
+}
+
+.mission li {
+  padding: 1px 10px;
+  border: 1.5px solid var(--rule);
+  border-radius: 999px;
+  background: var(--card);
+  white-space: nowrap;
+}
+
+.mission li.now {
+  border-color: var(--glass);
+  font-weight: 600;
+}
+
+.mission li.done {
+  border-color: var(--ok);
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+
+.go-quiz {
+  flex: none;
+}
+
+.todo {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.45;
+  min-height: 2.9em; /* two lines, so the bench does not jump when the text changes */
+}
+
+.bench {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-areas: 'shelf rig zoom' 'ctl ctl ctl';
+  gap: 4px 8px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 6px 8px;
+  overflow: hidden;
+}
+
+.shelf {
+  grid-area: shelf;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+}
+
+.bottle {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 64px;
+  min-height: var(--touch);
+  padding: 2px 4px;
+  line-height: 1.25;
+  border: 1.5px solid var(--rule);
+  border-radius: 10px;
+  background: var(--paper);
+  font-size: var(--fs-small);
+  cursor: pointer;
+}
+
+.bottle:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.bottle-svg {
+  width: 22px;
+  height: 34px;
+}
+
+.bottle-water .bottle-body {
+  fill: var(--temp-1);
+}
+
+.bottle-vegetableOil .bottle-body {
+  fill: var(--oil);
+}
+
+.rig-svg {
+  grid-area: rig;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.scale-zoom {
+  grid-area: zoom;
+  margin: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  justify-items: center;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.scale-zoom figcaption {
+  max-width: 80px;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.scale-zoom.off .zoom-svg {
+  opacity: 0.35;
+}
+
+.zoom-svg {
+  height: 100%;
+  width: auto;
+  min-height: 0;
+  max-width: 72px;
+}
+
+.bench-controls {
+  grid-area: ctl;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn.small {
+  padding: 0 14px;
+  white-space: nowrap;
+  flex: none;
+}
+
+.clock-note {
+  display: block;
+  font-size: 0.9em;
+}
+
+.clock {
+  margin: 0 0 0 auto;
+  line-height: 1.35;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.graph-slot .chart {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 2px 6px;
+}
+
+/* The one thing to touch next (PLAN §0.12). */
+.cue {
+  outline: 3px solid var(--glass);
+  outline-offset: 2px;
+  animation: cue 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes cue {
+  to {
+    outline-color: transparent;
+  }
+}
+
+.quiz-figure {
+  height: 200px;
+  margin: 0 0 10px;
+}
+
+/* Particle Box: three boxes side by side, no graph (PLAN §8.1). */
+.step-1.no-graph {
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-areas: 'mission' 'todo' 'bench' 'table';
+}
+
+.pbench {
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  grid-template-areas: 'boxes zoom' 'ctl ctl' 'ke ke';
+}
+
+.pboxes {
+  grid-area: boxes;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.pbox {
+  margin: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  text-align: center;
+}
+
+.pbox figcaption {
+  font-size: var(--fs-small);
+  line-height: 1.3;
+}
+
+.pbox figcaption span {
+  display: block;
+  color: var(--ink-2);
+  font-size: 0.9em;
+}
+
+.pbox-canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  --p-solid: #56646a;
+  --p-liquid: #2c5f8a;
+  --p-gas: #6b4fa0;
+}
+
+.pbench .bench-controls {
+  flex-wrap: wrap;
+}
+
+.ke {
+  grid-area: ke;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-small);
+}
+
+.ke-label {
+  flex: none;
+}
+
+.ke-bar {
+  flex: 1 1 auto;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.ke-fill {
+  display: block;
+  height: 100%;
+  background: var(--temp-4);
+  transition: width 0.3s;
+}
+
+.tables {
+  display: grid;
+  gap: 6px;
+}
+
+@media (min-width: 900px) {
+  .step-1.no-graph {
+    grid-template-rows: auto auto auto minmax(0, 1fr);
+    grid-template-areas: 'bench mission' 'bench todo' 'bench table' 'bench .';
+  }
+}
+
+/* ── experiment list (app home) ─────────────────────────── */
+.lab-home {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.lab-home {
+  overflow: auto;
+}
+
+.home-list {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.home-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  min-height: 72px;
+  background: var(--card);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--radius);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.home-card:hover {
+  border-color: var(--glass);
+}
+
+.home-card strong,
+.home-card .hint {
+  display: block;
+}
+
+.home-no {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--glass);
+  color: var(--glass-ink);
+  font-weight: 600;
+}
+
+a.lab-kicker {
+  color: var(--glass);
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ── teacher mode ───────────────────────────────────────── */
+.badge {
+  font-size: var(--fs-small);
+  padding: 2px 10px;
+  margin-left: 8px;
+  border-radius: 999px;
+  border: 1.5px solid var(--warn);
+  background: var(--warn-soft);
+  color: var(--warn);
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+button.badge {
+  cursor: pointer;
+  min-height: 32px;
+}
+
+/* Teacher button in the header's top-right corner, clear of the (possibly truncated) title. */
+.lab-header {
+  position: relative;
+}
+
+.lab-header > button.badge {
+  position: absolute;
+  top: 6px;
+  right: 16px;
+  margin: 0;
+  z-index: 1;
+}
+
+.key-tag {
+  margin-left: auto;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--ok);
+}
+
+.sheet {
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+  width: min(560px, calc(100vw - 32px));
+  padding: 18px;
+}
+
+.sheet::backdrop {
+  background: rgba(10, 16, 18, 0.45);
+}
+
+.sheet > * + *,
+.teacher-tools > * + * {
+  margin-top: 12px;
+}
+
+.field select {
+  min-height: var(--touch);
+  border: 1.5px solid var(--rule);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--ink);
+  padding: 0 10px;
+}
+
+/* Expand It: one scene at a time with a particle inset (PLAN §8.3). */
+.xbench {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas: 'title' 'stage' 'ctl';
+}
+
+.scene-title {
+  grid-area: title;
+  margin: 0;
+  font-weight: 600;
+  font-size: var(--fs-small);
+}
+
+.scene-stage {
+  grid-area: stage;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.scene-svg {
+  height: 100%;
+  width: 100%;
+  min-height: 0;
+  min-width: 0;
+}
+
+.inset {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  width: 96px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  font-size: 11px;
+  text-align: center;
+  color: var(--ink-2);
+}
+
+.particle-inset {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.xbench .bench-controls {
+  flex-wrap: wrap;
+}
+
+/* Phase Graph: beaker, thermometer, and the ice / water / steam bar (PLAN §8.4). */
+.pgbench {
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  grid-template-areas: 'rig zoom' 'bar bar' 'ctl ctl';
+}
+
+.phase-bar {
+  grid-area: bar;
+  display: flex;
+  height: 20px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.phase-bar span {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #1f2a2e;
+}
+
+.pb-ice {
+  background: #e9f4f7;
+}
+
+.pb-water {
+  background: #9cc3d5;
+}
+
+.pb-steam {
+  background: #f4efe4;
+}
+
+/* Thermal Mixer: Q lost / Q gained bars (PLAN §9.3). */
+.qbars {
+  grid-area: bar;
+  display: grid;
+  gap: 2px;
+  font-size: var(--fs-small);
+}
+
+.qbar {
+  display: grid;
+  grid-template-columns: 7.5em minmax(0, 1fr) 6.5em;
+  align-items: center;
+  gap: 6px;
+}
+
+.qbar-track {
+  height: 12px;
+  border-radius: 6px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.qbar-fill {
+  display: block;
+  height: 100%;
+}
+
+.qbar-fill.lost {
+  background: var(--warn);
+}
+
+.qbar-fill.gained {
+  background: var(--glass);
+}
+
+.qbar span:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Cool Box Designer: the box section and the design choices beside it (PLAN §9.4). */
+.cbbench {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  grid-template-areas: 'rig side' 'ctl ctl';
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.cb-side {
+  grid-area: side;
+  min-height: 0;
+  overflow: auto;
+}
+
+.design-panel {
+  display: grid;
+  gap: 2px;
+}
+
+.field.mini {
+  font-size: 12px;
+  gap: 0;
+}
+
+.field.mini select {
+  min-height: 34px;
+  font-size: var(--fs-small);
+  width: 100%;
+}
+
+/* Weather Station: a chart in place of the scene (Sun Angle day curve), the map, the class log tool. */
+.scene-chart {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.map-svg {
+  max-width: 100%;
+}
+
+.log-tool {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+
+.log-chart {
+  height: 220px;
+}
+
+/* ── results table ──────────────────────────────────────── */
+.result-table-wrap {
+  overflow: auto;
+  max-height: 100%;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+}
+
+.result-table caption {
+  text-align: left;
+  font-weight: 600;
+  padding: 4px 10px;
+  font-size: var(--fs-body);
+}
+
+.result-table th,
+.result-table td {
+  padding: 2px 6px;
+  text-align: center;
+  border-top: 1px solid var(--rule);
+  white-space: nowrap;
+}
+
+.result-table thead th {
+  background: var(--glass-soft);
+  line-height: 1.35;
+  white-space: normal;
+}
+
+.result-table tbody td,
+.result-table tbody th {
+  white-space: normal;
+}
+
+.result-table td,
+.result-table tbody th {
+  font-family: var(--font-head);
+  font-size: var(--fs-body);
+  line-height: 1.35;
+}
+
+.result-table td.asking {
+  padding: 2px;
+  background: var(--glass-soft);
+}
+
+.result-table td.asking.cue {
+  outline-offset: -3px;
+}
+
+.result-table td select {
+  width: 100%;
+  min-width: 4.2em;
+  min-height: 34px;
+  border: 1.5px solid var(--glass);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--fs-small);
+}
+
+.result-table td.wrong {
+  background: var(--warn-soft);
+  animation: shake 0.3s;
+}
+
+.result-table td.wrong select {
+  border-color: var(--warn);
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
+
+@media (max-width: 899px) {
+  /* The bench and graph say what the table is; keep the caption for screen readers only. */
+  .step-1 .result-table caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+}
+
+@media (max-width: 520px) {
+  .result-table th,
+  .result-table td {
+    padding: 1px 3px;
+  }
+
+  .result-table thead th {
+    font-size: 13px;
+  }
+}
+
+.result-table td.just-filled {
+  animation: filled 1.4s ease-out;
+}
+
+@keyframes filled {
+  from {
+    background: var(--ok-soft);
+  }
+}
+
+/* ── main button: the one thing to press in each step ───── */
+.btn.main {
+  width: 100%;
+  min-height: 56px;
+  border-radius: 14px;
+  font-size: var(--fs-h2);
+}
+
+
+/* ── quiz runner ────────────────────────────────────────── */
+.quiz-runner {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  gap: 8px;
+}
+
+.quiz-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.quiz-progress {
+  margin: 0;
+  font-weight: 600;
+}
+
+.quiz-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.quiz-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid var(--glass);
+}
+
+.quiz-dots .answered {
+  background: var(--glass-soft);
+}
+
+.quiz-dots .current {
+  background: var(--glass);
+}
+
+.quiz-card {
+  min-height: 0;
+  overflow: auto;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.quiz-stem {
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.quiz-choices {
+  display: grid;
+  gap: 8px;
+}
+
+.quiz-note:empty {
+  display: none;
+}
+
+.quiz-nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 8px;
+}
+
+.quiz-nav .btn {
+  min-height: 52px;
+}
+
+/* ── score and answer key ───────────────────────────────── */
+.score-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 16px;
+  background: var(--glass-soft);
+  border-radius: var(--radius);
+  padding: 6px 16px;
+}
+
+.score-label {
+  margin: 0;
+  font-weight: 600;
+}
+
+.score-big {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: calc(var(--fs-readout) * 1.5);
+  line-height: 1.1;
+  color: var(--glass);
+  margin: 0;
+}
+
+.score-msg {
+  margin: 0;
+  flex: 1 1 160px;
+}
+
+.send-box .field {
+  min-width: 0;
+}
+
+.send-box input {
+  width: 100%;
+  min-width: 0;
+}
+
+.send-box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+}
+
+.send-box .field.name,
+.send-box .btn,
+.send-box .hint {
+  grid-column: 1 / -1;
+}
+
+.review-box {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.review-box h2 {
+  font-size: var(--fs-h2);
+  padding: 8px 12px 4px;
+}
+
+.review-slot {
+  min-height: 0;
+  overflow: auto;
+}
+
+.review {
+  list-style: none;
+  margin: 0;
+  padding: 0 12px;
+}
+
+.review-note {
+  margin: 0;
+  padding: 8px 12px 10px;
+  border-top: 1px solid var(--rule);
+}
+
+.review-item {
+  padding: 8px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.review-item p {
+  margin: 2px 0;
+}
+
+.review-mark {
+  font-weight: 600;
+}
+
+.review-item.ok .review-mark {
+  color: var(--ok);
+}
+
+.review-item.no .review-mark {
+  color: var(--warn);
+}
+
+.review-check {
+  background: var(--paper);
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.review-foot {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 12px;
+  border-top: 1px solid var(--rule);
+}
+
+.quiz-choice:has(input:checked) {
+  border-color: var(--glass);
+  background: var(--glass-soft);
+}
+
+/* ── buttons and messages ──────────────────────────────── */
+.btn {
+  min-height: var(--touch);
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--glass);
+  background: var(--glass);
+  color: var(--glass-ink);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--glass);
+}
+
+.btn.warn {
+  border-color: var(--warn);
+  background: var(--warn);
+  color: #fff;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.link-btn {
+  border: 0;
+  background: none;
+  color: var(--glass);
+  min-height: var(--touch);
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hint {
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.notice {
+  border-left: 4px solid var(--warn);
+  background: var(--warn-soft);
+  padding: 8px 12px;
+  border-radius: 0 8px 8px 0;
+  margin: 0;
+}
+
+
+.quiz-choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--touch);
+  padding: 4px 10px;
+  border: 1.5px solid var(--rule);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.quiz-choice input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--glass);
+  flex: none;
+}
+
+.quiz-letter {
+  font-weight: 600;
+  flex: none;
+}
+
+.quiz-choice.is-answer {
+  border-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.quiz-choice.is-wrong {
+  border-color: var(--warn);
+  background: var(--warn-soft);
+}
+
+
+.field {
+  display: grid;
+  gap: 4px;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.field input,
+.field textarea {
+  min-height: var(--touch);
+  border: 1.5px solid var(--rule);
+  border-radius: 8px;
+  background: var(--card);
+  padding: 8px 10px;
+  font-size: var(--fs-body);
+  color: var(--ink);
+  resize: vertical;
+}
+
+.field-label {
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  z-index: 50;
+  max-width: calc(100vw - 32px);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: var(--fs-small);
+}
+
+
+/* ── thermometer ────────────────────────────────────────── */
+.thermometer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.thermo-svg {
+  width: 72px;
+  height: auto;
+  flex: none;
+}
+
+.thermo-label {
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.thermo-value {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: calc(var(--fs-readout) * 0.8);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+
+/* ── teacher mode (Phase 1): controls, log table, chart ─── */
+/* ── controls ───────────────────────────────────────────── */
+.slider-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.slider-head label {
+  flex: 1 1 auto;
+}
+
+.slider-value {
+  font-family: var(--font-head);
+  font-weight: 600;
+}
+
+.slider input[type='range'] {
+  width: 100%;
+  height: var(--touch);
+  accent-color: var(--glass);
+  margin: 0;
+}
+
+.slider select {
+  width: 100%;
+  min-height: var(--touch);
+  border: 1.5px solid var(--rule);
+  border-radius: 8px;
+  background: var(--card);
+  padding: 0 10px;
+}
+
+.slider-range {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+  margin-top: -6px;
+}
+
+.slider.locked {
+  opacity: 0.7;
+}
+
+.lock-tag {
+  font-size: var(--fs-small);
+  color: var(--warn);
+}
+
+.actions,
+
+.segmented {
+  display: inline-flex;
+  border: 1.5px solid var(--glass);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.seg {
+  border: 0;
+  background: transparent;
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: var(--fs-small);
+  cursor: pointer;
+  color: var(--glass);
+}
+
+.seg[aria-pressed='true'] {
+  background: var(--glass);
+  color: var(--glass-ink);
+  font-weight: 600;
+}
+
+.segmented.small .seg {
+  min-height: 32px;
+  padding: 0 10px;
+}
+
+/* ── table ──────────────────────────────────────────────── */
+.table-wrap {
+  overflow: auto;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+}
+
+.data-table th,
+.data-table td {
+  padding: 6px 10px;
+  text-align: right;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+
+.data-table th {
+  position: sticky;
+  top: 0;
+  background: var(--glass-soft);
+  font-weight: 600;
+}
+
+.data-table caption {
+  text-align: left;
+  font-weight: 600;
+  padding: 6px 10px;
+}
+
+.table-empty {
+  margin: 0;
+  padding: 10px;
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+}
+
+
+/* ── chart ──────────────────────────────────────────────── */
+.chart {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.chart-svg {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+
+.chart-svg {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  display: block;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-size: var(--fs-small);
+}
+
+.legend-item span {
+  color: var(--ink);
+}
+
+
+/* ── work steps ─────────────────────────────────────────── */
+.work-steps summary {
+  min-height: var(--touch);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--glass);
+  font-weight: 600;
+}
+
+.work-lines {
+  margin: 0;
+  padding-left: 1.6em;
+  font-family: var(--font-head);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Last in the file so it overrides the component rules above. */
+/* Small phones (360–520 px): tighter header, chips, and bench so every part still fits (PLAN §4.3). */
+@media (max-width: 520px) {
+  .lab-title {
+    font-size: var(--fs-h2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* One line of chips, scrolling sideways if needed, instead of wrapping onto a second row. */
+  .mission {
+    font-size: 13px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .mission li {
+    padding: 0 7px;
+  }
+
+  .bench-controls {
+    gap: 6px;
+  }
+
+
+  .todo {
+    font-size: var(--fs-small);
+  }
+
+  .bottle {
+    min-width: 56px;
+    padding: 1px 3px;
+    font-size: 13px;
+  }
+
+  .bottle-svg {
+    width: 18px;
+    height: 28px;
+  }
+
+  .bench-controls .btn.small {
+    font-size: var(--fs-small);
+    padding: 0 8px;
+    min-height: 40px;
+  }
+
+  .clock,
+  .pbox figcaption,
+  .ke {
+    font-size: 12px;
+  }
+}
+
+/* Storm & Climate: two stacked charts with their source line; the footprint working and bars. */
+.two-charts {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 2px;
+}
+
+.source-note {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+
+.foot-stage {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+  overflow: auto;
+}
+
+.foot-work {
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.foot-bars {
+  display: grid;
+  gap: 2px;
+  font-size: var(--fs-small);
+}
+
+.foot-mine {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 8px;
+}
+
+.foot-mine .scene-title,
+.foot-total {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: var(--fs-small);
+}

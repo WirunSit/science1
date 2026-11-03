@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="Sarabun, Leelawadee UI, sans-serif">
+  <!-- Shape of the heating curve of water (not to scale); drawn for this course. -->
+  <rect width="900" height="420" fill="#FFFDF8"/>
+  <g stroke="#1F2A2E" stroke-width="3" fill="none">
+    <path d="M90 360 V30 M90 360 H870"/>
+  </g>
+  <g stroke="#D8D0BF" stroke-width="1.5" stroke-dasharray="6 6">
+    <line x1="90" y1="290" x2="870" y2="290"/><line x1="90" y1="110" x2="870" y2="110"/>
+  </g>
+  <path d="M90 340 L130 290 L300 290 L420 110 L800 110 L840 70" fill="none" stroke="#B4441C" stroke-width="6" stroke-linejoin="round"/>
+  <g font-size="22" fill="#1F2A2E">
+    <text x="40" y="297">0 °C</text><text x="20" y="117">100 °C</text>
+    <text x="870" y="395" text-anchor="end">เวลา (ความร้อนที่ได้รับ) →</text>
+    <text x="100" y="24">↑ อุณหภูมิ</text>
+  </g>
+  <g font-size="20" fill="#56646A" text-anchor="middle">
+    <text x="112" y="385">1 น้ำแข็ง</text>
+    <text x="215" y="275">2 หลอมเหลว (คงที่)</text>
+    <text x="360" y="215">3 น้ำ</text>
+    <text x="610" y="95">4 เดือด (คงที่ นานกว่า)</text>
+    <text x="840" y="55">5 ไอน้ำ</text>
+  </g>
+</svg>

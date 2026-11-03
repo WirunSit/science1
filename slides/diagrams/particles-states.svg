@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Sarabun, Leelawadee UI, sans-serif">
+  <!-- Particle model of the three states; drawn for this course (no textbook images). -->
+  <rect width="900" height="380" fill="#FFFDF8"/>
+  <g stroke="#1F2A2E" stroke-width="3" fill="none">
+    <rect x="30" y="30" width="250" height="260" rx="6"/>
+    <rect x="325" y="30" width="250" height="260" rx="6"/>
+    <rect x="620" y="30" width="250" height="260" rx="6"/>
+  </g>
+  <!-- solid: ordered lattice, vibration marks -->
+  <g fill="#56646A">
+    <circle cx="95" cy="160" r="14"/><circle cx="125" cy="160" r="14"/><circle cx="155" cy="160" r="14"/><circle cx="185" cy="160" r="14"/><circle cx="215" cy="160" r="14"/>
+    <circle cx="95" cy="190" r="14"/><circle cx="125" cy="190" r="14"/><circle cx="155" cy="190" r="14"/><circle cx="185" cy="190" r="14"/><circle cx="215" cy="190" r="14"/>
+    <circle cx="95" cy="220" r="14"/><circle cx="125" cy="220" r="14"/><circle cx="155" cy="220" r="14"/><circle cx="185" cy="220" r="14"/><circle cx="215" cy="220" r="14"/>
+    <circle cx="95" cy="250" r="14"/><circle cx="125" cy="250" r="14"/><circle cx="155" cy="250" r="14"/><circle cx="185" cy="250" r="14"/><circle cx="215" cy="250" r="14"/>
+  </g>
+  <g stroke="#B4441C" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M70 160 q-6 -6 0 -12 M70 220 q-6 -6 0 -12 M240 190 q6 -6 0 -12 M240 250 q6 -6 0 -12"/>
+  </g>
+  <!-- liquid: close together, disordered, sliding -->
+  <g fill="#2C5F8A">
+    <circle cx="355" cy="272" r="14"/><circle cx="384" cy="270" r="14"/><circle cx="414" cy="274" r="14"/><circle cx="443" cy="271" r="14"/><circle cx="472" cy="273" r="14"/><circle cx="502" cy="270" r="14"/><circle cx="531" cy="272" r="14"/><circle cx="557" cy="268" r="14"/>
+    <circle cx="368" cy="245" r="14"/><circle cx="398" cy="243" r="14"/><circle cx="428" cy="247" r="14"/><circle cx="458" cy="244" r="14"/><circle cx="488" cy="246" r="14"/><circle cx="518" cy="242" r="14"/><circle cx="546" cy="244" r="14"/>
+    <circle cx="383" cy="218" r="14"/><circle cx="445" cy="217" r="14"/><circle cx="503" cy="216" r="14"/>
+  </g>
+  <g stroke="#B4441C" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M410 200 h26 m-8 -6 l8 6 l-8 6 M520 196 h-26 m8 -6 l-8 6 l8 6"/>
+  </g>
+  <!-- gas: far apart, moving freely in all directions -->
+  <g fill="#6B4FA0">
+    <circle cx="670" cy="80" r="14"/><circle cx="800" cy="70" r="14"/><circle cx="740" cy="150" r="14"/><circle cx="660" cy="220" r="14"/><circle cx="830" cy="200" r="14"/><circle cx="760" cy="260" r="14"/>
+  </g>
+  <g stroke="#B4441C" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M688 92 l24 18 M818 80 l22 -10 M722 150 l-26 6 M676 232 l14 24 M812 210 l-24 16 M778 252 l24 -12"/>
+  </g>
+  <g font-size="30" font-weight="700" fill="#1F2A2E" text-anchor="middle">
+    <text x="155" y="335">ของแข็ง</text><text x="450" y="335">ของเหลว</text><text x="745" y="335">แก๊ส</text>
+  </g>
+  <g font-size="20" fill="#56646A" text-anchor="middle">
+    <text x="155" y="365">ชิดกัน เป็นระเบียบ สั่นอยู่กับที่</text>
+    <text x="450" y="365">ชิดกัน เลื่อนผ่านกันได้</text>
+    <text x="745" y="365">ห่างกันมาก เคลื่อนที่อิสระ</text>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" font-family="Sarabun, Leelawadee UI, sans-serif">
+  <!-- Sea breeze by day, land breeze by night (drawn for this course) -->
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f2a2e"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f3efe5"/></marker>
+  </defs>
+  <rect x="0" y="0" width="470" height="360" fill="#dbeef6"/>
+  <rect x="490" y="0" width="470" height="360" fill="#2b3a55"/>
+  <rect x="0" y="270" width="235" height="90" fill="#b99a6b"/><rect x="235" y="270" width="235" height="90" fill="#4f8fb8"/>
+  <rect x="490" y="270" width="235" height="90" fill="#b99a6b"/><rect x="725" y="270" width="235" height="90" fill="#4f8fb8"/>
+  <circle cx="420" cy="44" r="24" fill="#f4d35e"/><circle cx="910" cy="44" r="18" fill="#e8e4d8"/>
+  <g font-size="22" font-weight="700">
+    <text x="20" y="40" fill="#1f2a2e">กลางวัน: ลมทะเล</text>
+    <text x="510" y="40" fill="#f3efe5">กลางคืน: ลมบก</text>
+    <text x="118" y="200" fill="#b4441c">L</text><text x="340" y="200" fill="#0e6b70">H</text>
+    <text x="830" y="200" fill="#b4441c">L</text><text x="608" y="200" fill="#4fb6b5">H</text>
+  </g>
+  <g stroke="#1f2a2e" stroke-width="4" fill="none" marker-end="url(#a)">
+    <path d="M125,170 V100"/><path d="M135,90 H330"/><path d="M345,100 V170"/><path d="M330,245 H140"/>
+  </g>
+  <g stroke="#f3efe5" stroke-width="4" fill="none" marker-end="url(#b)">
+    <path d="M835,170 V100"/><path d="M825,90 H630"/><path d="M615,100 V170"/><path d="M630,245 H820"/>
+  </g>
+  <g font-size="18" font-weight="600" text-anchor="middle">
+    <text x="118" y="318" fill="#1f2a2e">พื้นดิน ร้อนกว่า</text><text x="352" y="318" fill="#fff">ทะเล</text>
+    <text x="608" y="318" fill="#1f2a2e">พื้นดิน เย็นกว่า</text><text x="842" y="318" fill="#fff">ทะเล อุ่นกว่า</text>
+  </g>
+</svg>

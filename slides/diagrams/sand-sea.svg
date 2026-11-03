@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" font-family="Sarabun, Leelawadee UI, sans-serif">
+  <!-- Midday beach: same sunshine on sand and sea; drawn for this course. -->
+  <rect width="600" height="420" fill="#DCEFEE"/>
+  <circle cx="300" cy="70" r="40" fill="#E59A55"/>
+  <g stroke="#E59A55" stroke-width="5" stroke-linecap="round">
+    <path d="M245 70 h-25 M380 70 h-25 M260 30 l-16 -16 M340 30 l16 -16"/>
+    <path d="M200 120 l-40 70 M300 120 v80 M400 120 l40 70" stroke-dasharray="10 10"/>
+  </g>
+  <rect x="0" y="230" width="300" height="190" fill="#F1E6C8"/>
+  <rect x="300" y="230" width="300" height="190" fill="#9CC3D5"/>
+  <path d="M300 250 q25 -14 50 0 t50 0 t50 0 t50 0 t50 0 t50 0" stroke="#2C5F8A" stroke-width="3" fill="none"/>
+  <g stroke="#1F2A2E" stroke-width="2.5" fill="#FFFDF8">
+    <rect x="135" y="250" width="22" height="130" rx="11"/><circle cx="146" cy="385" r="18"/>
+    <rect x="435" y="250" width="22" height="130" rx="11"/><circle cx="446" cy="385" r="18"/>
+  </g>
+  <rect x="140" y="270" width="12" height="112" fill="#A63A16"/><circle cx="146" cy="385" r="13" fill="#A63A16"/>
+  <rect x="440" y="330" width="12" height="52" fill="#2C5F8A"/><circle cx="446" cy="385" r="13" fill="#2C5F8A"/>
+  <g font-size="32" font-weight="700" fill="#1F2A2E" text-anchor="middle">
+    <text x="75" y="300">ทราย</text><text x="530" y="300">น้ำทะเล</text>
+  </g>
+  <text x="300" y="215" font-size="22" fill="#1F2A2E" text-anchor="middle">แดดส่องนานเท่ากัน</text>
+</svg>

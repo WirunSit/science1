@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" width="400" height="420">
+  <!-- Drawn for this project: beaker of water on a hot plate with a thermometer. -->
+  <rect x="120" y="40" width="16" height="250" rx="8" fill="#fffdf8" stroke="#1f2a2e" stroke-width="3"/>
+  <rect x="123" y="150" width="10" height="130" rx="5" fill="#a63a16"/>
+  <circle cx="128" cy="292" r="14" fill="#a63a16" stroke="#1f2a2e" stroke-width="3"/>
+  <path d="M70 120 v220 a12 12 0 0 0 12 12 h196 a12 12 0 0 0 12 -12 v-220" fill="none" stroke="#1f2a2e" stroke-width="4"/>
+  <rect x="76" y="200" width="208" height="146" rx="6" fill="#e59a55" opacity="0.55"/>
+  <g stroke="#56646a" stroke-width="2">
+    <line x1="70" y1="180" x2="92" y2="180"/>
+    <line x1="70" y1="230" x2="92" y2="230"/>
+    <line x1="70" y1="280" x2="92" y2="280"/>
+    <line x1="70" y1="330" x2="92" y2="330"/>
+  </g>
+  <g fill="none" stroke="#a63a16" stroke-width="3" stroke-linecap="round">
+    <path d="M170 196 q8 -14 0 -28 q-8 -14 0 -28"/>
+    <path d="M210 196 q8 -14 0 -28 q-8 -14 0 -28"/>
+    <path d="M250 196 q8 -14 0 -28 q-8 -14 0 -28"/>
+  </g>
+  <rect x="40" y="356" width="280" height="40" rx="10" fill="#d8d0bf" stroke="#1f2a2e" stroke-width="3"/>
+  <rect x="60" y="364" width="240" height="10" rx="5" fill="#a63a16"/>
+  <circle cx="300" cy="386" r="6" fill="#1f2a2e"/>
+</svg>

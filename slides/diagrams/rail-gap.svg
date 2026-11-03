@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" font-family="Sarabun, Leelawadee UI, sans-serif">
+  <!-- Rail joint gap in cool and hot weather, and a rail with no joint buckling; drawn for this course. -->
+  <rect width="900" height="360" fill="#FFFDF8"/>
+  <g font-size="26" font-weight="700" fill="#1F2A2E">
+    <text x="30" y="45">อากาศเย็น</text><text x="480" y="45">แดดร้อนจัด</text>
+  </g>
+  <g fill="#8A9AA3">
+    <rect x="30" y="90" width="185" height="22"/><rect x="245" y="90" width="185" height="22"/>
+    <rect x="480" y="90" width="196" height="22"/><rect x="684" y="90" width="196" height="22"/>
+  </g>
+  <g stroke="#B4441C" stroke-width="3">
+    <line x1="215" y1="135" x2="245" y2="135"/><line x1="676" y1="135" x2="684" y2="135"/>
+  </g>
+  <g font-size="20" fill="#56646A" text-anchor="middle">
+    <text x="230" y="165">ช่องว่างกว้าง</text><text x="680" y="165">ช่องว่างแคบลง</text>
+  </g>
+  <text x="30" y="230" font-size="22" fill="#1F2A2E">รางไม่มีรอยต่อ เมื่อแดดร้อนจัด</text>
+  <path d="M30 300 h300 q60 0 90 -40 q30 40 90 40 h360" fill="none" stroke="#8A9AA3" stroke-width="18"/>
+  <text x="480" y="236" font-size="20" fill="#B4441C" text-anchor="middle">โก่งงอ</text>
+</svg>

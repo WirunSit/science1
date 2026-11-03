@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 560" font-family="Sarabun, Leelawadee UI, sans-serif">
+  <!-- Four layers of the atmosphere by temperature (drawn for this course; heights approximate, not to scale) -->
+  <rect x="0" y="0" width="520" height="560" fill="#fffdf8"/>
+  <rect x="60" y="20" width="300" height="130" fill="#f3e3d8" stroke="#9aa5a9"/>
+  <rect x="60" y="150" width="300" height="130" fill="#e8def0" stroke="#9aa5a9"/>
+  <rect x="60" y="280" width="300" height="150" fill="#dcdff2" stroke="#9aa5a9"/>
+  <rect x="60" y="430" width="300" height="110" fill="#cfe6ee" stroke="#9aa5a9"/>
+  <rect x="60" y="540" width="300" height="14" fill="#8fae6f"/>
+  <g font-size="20" font-weight="700" fill="#1f2a2e">
+    <text x="372" y="90">เทอร์โมสเฟียร์</text>
+    <text x="372" y="220">มีโซสเฟียร์</text>
+    <text x="372" y="360">สตราโตสเฟียร์</text>
+    <text x="372" y="490">โทรโพสเฟียร์</text>
+  </g>
+  <g font-size="15" fill="#56646a" text-anchor="end">
+    <text x="54" y="154">≈ 85 km</text>
+    <text x="54" y="284">≈ 50 km</text>
+    <text x="54" y="434">≈ 12 km</text>
+    <text x="54" y="552">0</text>
+  </g>
+  <!-- temperature curve: decreasing, steady then increasing, decreasing, increasing -->
+  <polyline points="260,540 140,440 140,400 250,290 250,270 120,160 125,140 330,30" fill="none" stroke="#b4441c" stroke-width="4"/>
+  <text x="335" y="34" font-size="14" fill="#b4441c">อุณหภูมิ</text>
+  <g font-size="15" fill="#1f2a2e">
+    <text x="76" y="60">แสงออโรรา · สถานีอวกาศ</text>
+    <text x="76" y="200">ดาวตกลุกไหม้</text>
+    <text x="76" y="330">ชั้นโอโซน</text>
+    <text x="76" y="470">เมฆ ฝน เครื่องบิน</text>
+  </g>
+</svg>

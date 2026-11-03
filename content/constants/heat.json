@@ -1,0 +1,82 @@
+{
+  "$comment": "ค่าคงที่หน่วย 5 พลังงานความร้อน ทุกค่ามี source และ verified; verified:false = รอครูเทียบกับหนังสือเรียน สสวท. ม.1 เล่ม 2",
+  "specificHeat": {
+    "$unit": "J/(kg·°C)",
+    "water": { "name": "น้ำ", "value": 4200, "unit": "J/(kg·°C)", "verified": true, "source": "ครูยืนยันตามหนังสือเรียน สสวท. (2 พ.ย. 2569)", "note": "ค่าสากล 4186 — หนังสือใช้ 4200" },
+    "ice": { "name": "น้ำแข็ง", "value": 2100, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "steam": { "name": "ไอน้ำ", "value": 2010, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "aluminium": { "name": "อะลูมิเนียม", "value": 900, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "copper": { "name": "ทองแดง", "value": 385, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "บางแหล่งใช้ 390" },
+    "iron": { "name": "เหล็ก", "value": 450, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "บางแหล่งใช้ 460" },
+    "stainlessSteel": { "name": "เหล็กกล้าไร้สนิม", "value": 500, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (เพิ่มจากแผน เพื่อคำนวณสภาพแพร่ความร้อนในสถานี Conduction Rod)" },
+    "glass": { "name": "แก้ว", "value": 840, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "wood": { "name": "ไม้", "value": 1700, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (เพิ่มจากแผน เพื่อคำนวณสภาพแพร่ความร้อน)", "note": "ค่าโดยประมาณ ต่างตามชนิดไม้ 1,200–2,400" },
+    "sand": { "name": "ทราย", "value": 830, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "ค่าโดยประมาณ" },
+    "ethanol": { "name": "เอทานอล", "value": 2440, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "vegetableOil": { "name": "น้ำมันพืช", "value": 1970, "unit": "J/(kg·°C)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "ค่าโดยประมาณ ต่างตามชนิดน้ำมัน" }
+  },
+  "latentHeat": {
+    "fusionWater": { "name": "ความร้อนแฝงจำเพาะของการหลอมเหลวของน้ำแข็ง", "symbol": "L_f", "value": 334000, "unit": "J/kg", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "บางเล่มใช้ 3.33 × 10⁵ หรือ 3.36 × 10⁵" },
+    "vaporizationWater": { "name": "ความร้อนแฝงจำเพาะของการกลายเป็นไอของน้ำ", "symbol": "L_v", "value": 2260000, "unit": "J/kg", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" }
+  },
+  "phasePoints": {
+    "waterMelting": { "name": "จุดหลอมเหลวของน้ำแข็ง", "value": 0, "unit": "°C", "verified": true, "source": "นิยามที่ความดัน 1 บรรยากาศ" },
+    "waterBoiling": { "name": "จุดเดือดของน้ำ", "value": 100, "unit": "°C", "verified": true, "source": "นิยามที่ความดัน 1 บรรยากาศ" },
+    "ethanolBoiling": { "name": "จุดเดือดของเอทานอล", "value": 78, "unit": "°C", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 8.2)" },
+    "vegetableOilCeiling": { "name": "อุณหภูมิสูงสุดที่ให้น้ำมันพืชในแล็บ", "value": 150, "unit": "°C", "verified": false, "source": "ข้อกำหนดความปลอดภัยของแผน (ข้อ 8.2)", "note": "ไม่ใช่จุดเดือด เป็นเพดานเพื่อความปลอดภัย" },
+    "waxDrop": { "name": "อุณหภูมิที่เม็ดเทียนไขหลุด (Conduction Rod)", "value": 50, "unit": "°C", "verified": false, "source": "แผนข้อ 9.1", "note": "จุดหลอมเหลวเทียนไขราว 45–65 °C ครูตั้งค่าได้" }
+  },
+  "linearExpansion": {
+    "$unit": "/°C",
+    "aluminium": { "name": "อะลูมิเนียม", "value": 23e-6, "unit": "/°C", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "ใช้ภายในแบบจำลองเชิงเปรียบเทียบ ไม่สอนสมการ" },
+    "brass": { "name": "ทองเหลือง", "value": 19e-6, "unit": "/°C", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "copper": { "name": "ทองแดง", "value": 17e-6, "unit": "/°C", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "steel": { "name": "เหล็ก/เหล็กกล้า", "value": 12e-6, "unit": "/°C", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "concrete": { "name": "คอนกรีต", "value": 12e-6, "unit": "/°C", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "ค่าโดยประมาณ" },
+    "glass": { "name": "แก้วธรรมดา", "value": 9e-6, "unit": "/°C", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" }
+  },
+  "thermalConductivity": {
+    "$unit": "W/(m·K)",
+    "copper": { "name": "ทองแดง", "value": 401, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "ใช้ภายในแบบจำลอง ไม่แสดงสมการต่อนักเรียน" },
+    "aluminium": { "name": "อะลูมิเนียม", "value": 237, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "iron": { "name": "เหล็ก", "value": 80, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "stainlessSteel": { "name": "เหล็กกล้าไร้สนิม", "value": 16, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "glass": { "name": "แก้ว", "value": 0.9, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "wood": { "name": "ไม้", "value": 0.13, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "pvc": { "name": "พลาสติก (PVC)", "value": 0.19, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "eps": { "name": "โฟม (EPS)", "value": 0.033, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "stillAir": { "name": "อากาศนิ่ง", "value": 0.026, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "cardboard": { "name": "กระดาษลัง", "value": 0.06, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "ค่าโดยประมาณ" },
+    "cotton": { "name": "ผ้าฝ้าย/สำลี", "value": 0.04, "unit": "W/(m·K)", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "ค่าโดยประมาณ" }
+  },
+  "density": {
+    "$unit": "kg/m³",
+    "water": { "name": "น้ำ", "value": 1000, "unit": "kg/m³", "verified": false, "source": "ค่าอ้างอิงทั่วไป (เพิ่มจากแผน)", "note": "ใช้กำหนดระดับของเหลวในบีกเกอร์ของโต๊ะทดลองเสมือน" },
+    "vegetableOil": { "name": "น้ำมันพืช", "value": 920, "unit": "kg/m³", "verified": false, "source": "ค่าอ้างอิงทั่วไป (เพิ่มจากแผน)", "note": "ค่าโดยประมาณ ใช้กำหนดระดับของเหลวในบีกเกอร์ (มวลเท่ากัน น้ำมันพืชสูงกว่าน้ำเล็กน้อย)" },
+    "copper": { "name": "ทองแดง", "value": 8960, "unit": "kg/m³", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "aluminium": { "name": "อะลูมิเนียม", "value": 2700, "unit": "kg/m³", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "iron": { "name": "เหล็ก", "value": 7870, "unit": "kg/m³", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "stainlessSteel": { "name": "เหล็กกล้าไร้สนิม", "value": 8000, "unit": "kg/m³", "verified": false, "source": "ค่าอ้างอิงทั่วไป (เพิ่มจากแผน)" },
+    "glass": { "name": "แก้ว", "value": 2500, "unit": "kg/m³", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)" },
+    "wood": { "name": "ไม้", "value": 600, "unit": "kg/m³", "verified": false, "source": "ค่าอ้างอิงทั่วไป (แผนข้อ 7.1)", "note": "ค่าโดยประมาณ" }
+  },
+  "absorptivity": {
+    "$comment": "ค่าโดยประมาณ ใช้แสดงลำดับเชิงเปรียบเทียบเท่านั้น",
+    "matteBlack": { "name": "ผิวดำด้าน", "value": 0.95, "unit": "", "verified": false, "source": "ค่าโดยประมาณ (แผนข้อ 7.1)" },
+    "red": { "name": "ผิวสีแดง", "value": 0.6, "unit": "", "verified": false, "source": "ค่าโดยประมาณ (แผนข้อ 7.1)" },
+    "white": { "name": "ผิวสีขาว", "value": 0.25, "unit": "", "verified": false, "source": "ค่าโดยประมาณ (แผนข้อ 7.1)" },
+    "polishedSilver": { "name": "ผิวเงินขัดเงา", "value": 0.1, "unit": "", "verified": false, "source": "ค่าโดยประมาณ (แผนข้อ 7.1)" }
+  },
+  "emissivity": {
+    "$comment": "การคายรังสีอินฟราเรดของผิว (ใช้ตอนกระป๋องเย็นลง) ต่างจากการดูดกลืนแสง: สีทาทุกสีคายรังสีได้ดีใกล้เคียงกัน ผิวโลหะมันวาวคายได้น้อย",
+    "matteBlack": { "name": "ผิวดำด้าน", "value": 0.95, "unit": "", "verified": false, "source": "ค่าโดยประมาณของสีทา (ตารางค่าการคายรังสีทั่วไป)" },
+    "red": { "name": "ผิวสีแดง", "value": 0.9, "unit": "", "verified": false, "source": "ค่าโดยประมาณของสีทา (ตารางค่าการคายรังสีทั่วไป)" },
+    "white": { "name": "ผิวสีขาว", "value": 0.9, "unit": "", "verified": false, "source": "ค่าโดยประมาณของสีทา (ตารางค่าการคายรังสีทั่วไป)", "note": "สีขาวสะท้อนแสงได้ดี แต่คายรังสีอินฟราเรดได้ดีพอ ๆ กับสีดำ" },
+    "polishedSilver": { "name": "ผิวเงินขัดเงา", "value": 0.05, "unit": "", "verified": false, "source": "ค่าโดยประมาณของโลหะขัดเงา (ตารางค่าการคายรังสีทั่วไป)" }
+  },
+  "temperatureConversion": {
+    "kelvinOffset": { "name": "K = °C + ค่านี้", "value": 273, "unit": "K", "verified": true, "source": "ครูยืนยันตามหนังสือเรียน สสวท. (2 พ.ย. 2569)", "note": "ค่าสากล 273.15 — หนังสือใช้ 273" },
+    "fahrenheitScale": { "name": "°F = °C × ค่านี้ + 32", "value": 1.8, "unit": "", "verified": true, "source": "นิยามมาตราฟาเรนไฮต์" },
+    "fahrenheitOffset": { "name": "°F = °C × 9/5 + ค่านี้", "value": 32, "unit": "°F", "verified": true, "source": "นิยามมาตราฟาเรนไฮต์" }
+  }
+}

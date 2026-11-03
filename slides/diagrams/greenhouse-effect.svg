@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="Sarabun, Leelawadee UI, sans-serif">
+  <!-- Greenhouse effect: sunlight in, infrared out, part sent back by greenhouse gases (drawn for this course) -->
+  <defs>
+    <marker id="y" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e5b51c"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c8452a"/></marker>
+  </defs>
+  <rect width="900" height="400" fill="#1d2a44"/>
+  <circle cx="70" cy="70" r="40" fill="#f4d35e"/>
+  <path d="M-40,400 Q450,120 940,400 Z" fill="#9cc3d5" opacity="0.35"/>
+  <path d="M0,400 Q450,250 900,400 Z" fill="#4f8f5a"/>
+  <g stroke="#e5b51c" stroke-width="6" fill="none" marker-end="url(#y)">
+    <path d="M110,100 L330,320"/><path d="M120,80 L430,305"/>
+  </g>
+  <g stroke="#c8452a" stroke-width="6" fill="none" stroke-dasharray="14 8" marker-end="url(#r)">
+    <path d="M520,305 L700,30"/>
+  </g>
+  <g stroke="#c8452a" stroke-width="6" fill="none" marker-end="url(#r)">
+    <path d="M600,300 L660,210 L700,300"/><path d="M720,310 L780,225 L820,320"/>
+  </g>
+  <g font-size="24" font-weight="700" fill="#f3efe5">
+    <text x="140" y="190">แสงอาทิตย์ผ่านบรรยากาศ</text>
+    <text x="560" y="60">รังสีอินฟราเรดบางส่วนออกสู่อวกาศ</text>
+    <text x="580" y="190">แก๊สเรือนกระจกแผ่กลับบางส่วน</text>
+    <text x="330" y="380" fill="#1f2a2e">พื้นโลกดูดกลืนแสงแล้วแผ่รังสีอินฟราเรด</text>
+  </g>
+</svg>

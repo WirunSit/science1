@@ -1,0 +1,167 @@
+# U6C1-L4-A1 ใบกิจกรรม ไฮโกรมิเตอร์กระเปาะเปียก–กระเปาะแห้ง (แผนข้อ 10) — เขียนขึ้นเองสำหรับรายวิชานี้
+# ตารางหาความชื้นสัมพัทธ์คำนวณจากสูตร (hygrometerTableValue) จนกว่าครูจะป้อนตารางของหนังสือใน weather.json → hygrometerTable
+{
+  "id": "U6C1-L4-A1",
+  "lesson": "U6C1-L4",
+  "type": "A",
+  "title": "ใบกิจกรรม ไฮโกรมิเตอร์กระเปาะเปียก–กระเปาะแห้ง",
+  "qr": "clip",
+  "objectives": [
+    "ประดิษฐ์ไฮโกรมิเตอร์และวัดความชื้นสัมพัทธ์",
+    "อธิบายว่าทำไมกระเปาะเปียกอ่านค่าได้ต่ำกว่า"
+  ],
+  "inquiry": [
+    {
+      "label": "คำถามการทดลอง",
+      "lines": 1,
+      "answer": "ความชื้นสัมพัทธ์ในห้องเรียนและนอกห้องเรียนเท่ากันหรือไม่"
+    },
+    {
+      "label": "สมมติฐาน (ถ้า... ดังนั้น...)",
+      "lines": 2,
+      "answer": "ถ้าอากาศแห้ง ดังนั้นน้ำที่ผ้าก๊อซระเหยมาก กระเปาะเปียกอ่านค่าต่ำกว่ากระเปาะแห้งมาก"
+    }
+  ],
+  "materials": [
+    [
+      "เทอร์โมมิเตอร์",
+      "2 อัน"
+    ],
+    [
+      "ผ้าก๊อซและด้าย",
+      "1 ชุด"
+    ],
+    [
+      "น้ำ",
+      "1 แก้ว"
+    ],
+    [
+      "กระดาษแข็งสำหรับพัด",
+      "1 แผ่น"
+    ]
+  ],
+  "safety": [
+    "ระวังเทอร์โมมิเตอร์แตก ถ้าแตกห้ามจับด้วยมือ แจ้งครูทันที",
+    "อย่าเหวี่ยงเทอร์โมมิเตอร์ ใช้กระดาษแข็งพัดลมเบา ๆ แทน"
+  ],
+  "procedure": [
+    "หุ้มกระเปาะเทอร์โมมิเตอร์อันหนึ่งด้วยผ้าก๊อซ ชุบน้ำให้เปียก (กระเปาะเปียก) อีกอันไม่หุ้ม (กระเปาะแห้ง)",
+    "วางคู่กันในที่ร่ม พัดลมเบา ๆ 2–3 นาที จนค่านิ่ง",
+    "อ่านทั้งสองอัน หาผลต่าง แล้วเปิดตารางหาความชื้นสัมพัทธ์ท้ายใบกิจกรรม",
+    "วัดในห้องเรียนและนอกห้องเรียน"
+  ],
+  "table": {
+    "caption": "ตารางบันทึกผล",
+    "columns": [
+      "ที่วัด",
+      "กระเปาะแห้ง (°C)",
+      "กระเปาะเปียก (°C)",
+      "ผลต่าง (°C)",
+      "ความชื้นสัมพัทธ์ (%)"
+    ],
+    "rows": [
+      "ในห้องเรียน",
+      "นอกห้องเรียน"
+    ]
+  },
+  "questions": [
+    {
+      "q": "ทำไมกระเปาะเปียกอ่านค่าได้ต่ำกว่ากระเปาะแห้ง",
+      "level": "เข้าใจ",
+      "lines": 2,
+      "answer": "น้ำที่ผ้าก๊อซระเหย ใช้ความร้อนแฝงจากกระเปาะ กระเปาะเปียกจึงเย็นลง"
+    },
+    {
+      "q": "ถ้ากระเปาะแห้งและกระเปาะเปียกอ่านค่าเท่ากัน ความชื้นสัมพัทธ์เป็นเท่าใด เพราะเหตุใด",
+      "level": "วิเคราะห์",
+      "lines": 2,
+      "answer": "100% อากาศอิ่มตัว น้ำระเหยไม่ได้ กระเปาะเปียกจึงไม่เย็นลง"
+    }
+  ],
+  "conclusion": {
+    "lines": 2,
+    "answer": "ผลต่างของกระเปาะแห้งและกระเปาะเปียกมาก ความชื้นสัมพัทธ์ต่ำ ผลต่างน้อย ความชื้นสัมพัทธ์สูง"
+  },
+  "grid": {
+    "caption": "ตารางหาความชื้นสัมพัทธ์ (%) — ค่าประมาณจากสูตร ครูตรวจกับตารางในหนังสือ",
+    "rows": [
+      [
+        "กระเปาะแห้ง (°C)",
+        "ต่าง 1 °C",
+        "ต่าง 2 °C",
+        "ต่าง 3 °C",
+        "ต่าง 4 °C",
+        "ต่าง 5 °C",
+        "ต่าง 6 °C"
+      ],
+      [
+        "24",
+        "{calc:hygrometerTableValue:24:1}",
+        "{calc:hygrometerTableValue:24:2}",
+        "{calc:hygrometerTableValue:24:3}",
+        "{calc:hygrometerTableValue:24:4}",
+        "{calc:hygrometerTableValue:24:5}",
+        "{calc:hygrometerTableValue:24:6}"
+      ],
+      [
+        "26",
+        "{calc:hygrometerTableValue:26:1}",
+        "{calc:hygrometerTableValue:26:2}",
+        "{calc:hygrometerTableValue:26:3}",
+        "{calc:hygrometerTableValue:26:4}",
+        "{calc:hygrometerTableValue:26:5}",
+        "{calc:hygrometerTableValue:26:6}"
+      ],
+      [
+        "28",
+        "{calc:hygrometerTableValue:28:1}",
+        "{calc:hygrometerTableValue:28:2}",
+        "{calc:hygrometerTableValue:28:3}",
+        "{calc:hygrometerTableValue:28:4}",
+        "{calc:hygrometerTableValue:28:5}",
+        "{calc:hygrometerTableValue:28:6}"
+      ],
+      [
+        "30",
+        "{calc:hygrometerTableValue:30:1}",
+        "{calc:hygrometerTableValue:30:2}",
+        "{calc:hygrometerTableValue:30:3}",
+        "{calc:hygrometerTableValue:30:4}",
+        "{calc:hygrometerTableValue:30:5}",
+        "{calc:hygrometerTableValue:30:6}"
+      ],
+      [
+        "32",
+        "{calc:hygrometerTableValue:32:1}",
+        "{calc:hygrometerTableValue:32:2}",
+        "{calc:hygrometerTableValue:32:3}",
+        "{calc:hygrometerTableValue:32:4}",
+        "{calc:hygrometerTableValue:32:5}",
+        "{calc:hygrometerTableValue:32:6}"
+      ],
+      [
+        "34",
+        "{calc:hygrometerTableValue:34:1}",
+        "{calc:hygrometerTableValue:34:2}",
+        "{calc:hygrometerTableValue:34:3}",
+        "{calc:hygrometerTableValue:34:4}",
+        "{calc:hygrometerTableValue:34:5}",
+        "{calc:hygrometerTableValue:34:6}"
+      ]
+    ]
+  },
+  "rubric": [
+    [
+      "ประดิษฐ์และอ่านค่าถูกต้อง",
+      4
+    ],
+    [
+      "ใช้ตารางหาความชื้นสัมพัทธ์ถูกต้อง",
+      3
+    ],
+    [
+      "ตอบคำถาม",
+      3
+    ]
+  ]
+}

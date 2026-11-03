@@ -1,0 +1,31 @@
+{
+  "$comment": "ค่าคงที่หน่วย 6 บท 2 ภูมิอากาศ ทุกค่ามี source และ verified",
+  "co2PreIndustrial": { "name": "CO₂ ก่อนยุคอุตสาหกรรม", "value": 280, "unit": "ppm", "verified": false, "source": "IPCC" },
+  "co2IceAge": { "name": "CO₂ ยุคน้ำแข็ง (ปุ่มลัด)", "value": 180, "unit": "ppm", "verified": false, "source": "ค่าประมาณจากแกนน้ำแข็ง (แผนข้อ 11.2)" },
+  "co2Current": { "name": "CO₂ ปัจจุบัน (ค่าเฉลี่ยรายปีล่าสุด Mauna Loa ปี 2025)", "value": 427.35, "unit": "ppm", "verified": false, "source": "NOAA GML co2_annmean_mlo.csv (ดาวน์โหลด 3 พ.ย. 2569) https://gml.noaa.gov/ccgg/trends/", "note": "ต้องตรงกับแถวปีล่าสุดใน content/data/noaa-co2/co2_annmean_mlo.csv (unit test ตรวจ)" },
+  "tempAnomalyLatest": { "name": "อุณหภูมิเฉลี่ยโลกปี 2025 สูงกว่าค่าเฉลี่ยปี 1951–1980", "value": 1.18, "unit": "°C", "verified": false, "source": "NASA GISS GISTEMP v4 GLB.Ts+dSST.csv (ดาวน์โหลด 3 พ.ย. 2569)", "note": "ต้องตรงกับปี 2025 ใน content/data/nasa-gistemp (unit test ตรวจ)" },
+  "co2ForcingCoefficient": { "name": "ΔF = ค่านี้ × ln(C / C₀)", "value": 5.35, "unit": "W/m²", "verified": false, "source": "Myhre et al. 1998" },
+  "climateSensitivity": { "name": "λ ความไวของภูมิอากาศ (แบบจำลองอย่างง่าย)", "value": 0.8, "unit": "°C/(W/m²)", "verified": false, "source": "IPCC AR6 (CO₂ 2 เท่า → ≈ 3 °C)" },
+  "baselineTempC": { "name": "อุณหภูมิฐานก่อนยุคอุตสาหกรรม (Greenhouse Earth)", "value": 14, "unit": "°C", "verified": false, "source": "ค่าประมาณ (แผนข้อ 11.2) ครูตั้งค่าได้" },
+  "surfaceTempC": { "name": "อุณหภูมิผิวโลกเฉลี่ยโดยประมาณ", "value": 15, "unit": "°C", "verified": false, "source": "แผนข้อ 7.3" },
+  "noGreenhouseTempC": { "name": "อุณหภูมิโลกถ้าไม่มีปรากฏการณ์เรือนกระจก", "value": -18, "unit": "°C", "verified": false, "source": "แผนข้อ 7.3" },
+  "climateDefinitionYears": { "name": "ช่วงเวลาที่ใช้นิยามภูมิอากาศ", "value": 30, "unit": "ปี", "verified": false, "source": "WMO climate normal", "note": "ตรวจช่วงเวลาที่หนังสือใช้" },
+  "emissionFactors": {
+    "$comment": "ค่าจาก อบก. (TGO) ค้นเมื่อ 3 พ.ย. 2569; null = ยังไม่มีค่า แล็บซ่อนกิจกรรมนั้น ครูตรวจกับประกาศล่าสุดของ อบก.",
+    "electricity": { "name": "ไฟฟ้า (ค่าเฉลี่ยระบบไฟฟ้าของประเทศ)", "value": 0.475, "unit": "kgCO₂e/kWh", "verified": false, "source": "อบก. ค่า Emission Factor ไฟฟ้า Scope 2 มีผลตั้งแต่ 1 ม.ค. 2569 (รายงานโดยฐานเศรษฐกิจ https://www.thansettakij.com/economy/trade-agriculture/645330)", "note": "ค่าเดิมปี 2564 คือ 0.4872" },
+    "gasohol": { "name": "น้ำมันแก๊สโซฮอล์ 95 (E10)", "value": 1.9135, "unit": "kgCO₂e/ลิตร", "verified": false, "source": "อบก. ตารางค่าการปล่อยก๊าซเรือนกระจก (ghgreduction.tgo.or.th)", "note": "อาจไม่ใช่ชุดค่าล่าสุดของปี 2569" },
+    "diesel": { "name": "น้ำมันดีเซล (B7)", "value": 2.6995, "unit": "kgCO₂e/ลิตร", "verified": false, "source": "อบก. ตารางค่าการปล่อยก๊าซเรือนกระจก (ghgreduction.tgo.or.th)", "note": "อาจไม่ใช่ชุดค่าล่าสุดของปี 2569" },
+    "food": { "name": "อาหาร", "value": null, "unit": "kgCO₂e/มื้อ", "verified": false, "source": "ยังไม่พบค่าจาก อบก. ที่ใช้กับมื้ออาหาร — แล็บซ่อนกิจกรรมนี้" },
+    "waste": { "name": "ขยะ", "value": null, "unit": "kgCO₂e/kg", "verified": false, "source": "ยังไม่พบค่าจาก อบก. ที่เหมาะกับนักเรียน — แล็บซ่อนกิจกรรมนี้" }
+  },
+  "appliances": {
+    "$comment": "กำลังไฟฟ้าโดยประมาณ ใช้ใน My Footprint (ไม่ใช่ค่าจาก อบก.)",
+    "airConditioner": { "name": "เครื่องปรับอากาศขนาดห้องนอน", "value": 1.0, "unit": "kW", "verified": false, "source": "ค่าโดยประมาณของเครื่องปรับอากาศ 12,000 BTU" },
+    "fan": { "name": "พัดลมตั้งพื้น", "value": 0.05, "unit": "kW", "verified": false, "source": "ค่าโดยประมาณ (ฉลากพัดลม 40–60 W)" }
+  },
+  "vehicles": {
+    "$comment": "อัตราสิ้นเปลืองน้ำมันโดยประมาณ ใช้แปลงระยะทางเป็นลิตร (ไม่ใช่ค่าจาก อบก.)",
+    "motorcycle": { "name": "รถจักรยานยนต์", "value": 40, "unit": "km/ลิตร", "verified": false, "source": "ค่าโดยประมาณของรถจักรยานยนต์ 110–125 cc" },
+    "car": { "name": "รถยนต์ส่วนบุคคล", "value": 14, "unit": "km/ลิตร", "verified": false, "source": "ค่าโดยประมาณของรถยนต์นั่ง" }
+  }
+}

@@ -1,0 +1,94 @@
+/* Design tokens — "โต๊ะแล็บของนักเรียน" (docs/decisions.md). Every lab imports this file. */
+:root {
+  --paper: #f5f2ea;
+  --card: #fffdf8;
+  --ink: #1f2a2e;
+  --ink-2: #56646a;
+  --rule: #d8d0bf;
+  --glass: #0e6b70;
+  --glass-ink: #ffffff;
+  --glass-soft: #dcefee;
+  --warn: #b4441c;
+  --warn-soft: #f8e4d9;
+  --ok: #2f6b3a;
+  --ok-soft: #dfeedd;
+  --oil: #e2b84a;
+
+  /* Cool → hot, distinguishable with red-green colour blindness. Always paired with a number. */
+  --temp-0: #2c5f8a;
+  --temp-1: #9cc3d5;
+  --temp-2: #f1e6c8;
+  --temp-3: #e59a55;
+  --temp-4: #a63a16;
+
+  /* Up to 4 overlaid series: colour + marker shape differ. */
+  --series-1: #0e6b70;
+  --series-2: #b4441c;
+  --series-3: #6b4fa0;
+  --series-4: #8a6d1f;
+
+  --font-body: 'IBM Plex Sans Thai Looped', 'Leelawadee UI', 'Noto Sans Thai', sans-serif;
+  --font-head: 'IBM Plex Sans Thai', 'Leelawadee UI', 'Noto Sans Thai', sans-serif;
+
+  --scale: 1;
+  --fs-body: calc(18px * var(--scale));
+  --fs-small: calc(15px * var(--scale));
+  --fs-h1: calc(21px * var(--scale));
+  --fs-h2: calc(19px * var(--scale));
+  --fs-readout: calc(34px * var(--scale));
+  --touch: 44px;
+  --radius: 10px;
+  --gap: 12px;
+  --shadow: 0 1px 0 rgba(31, 42, 46, 0.06), 0 2px 8px rgba(31, 42, 46, 0.06);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #151b1d;
+    --card: #1d2528;
+    --ink: #ece7dc;
+    --ink-2: #a9b3b5;
+    --rule: #34403f;
+    --glass: #4fb6b5;
+    --glass-ink: #0d1517;
+    --glass-soft: #20393a;
+    --warn: #f08a5d;
+    --warn-soft: #3a2519;
+    --ok: #8fcf95;
+    --ok-soft: #1f3322;
+    --oil: #c99b2e;
+    --series-1: #4fb6b5;
+    --series-2: #f08a5d;
+    --series-3: #b49be0;
+    --series-4: #d8b75a;
+    --shadow: none;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --paper: #151b1d;
+  --card: #1d2528;
+  --ink: #ece7dc;
+  --ink-2: #a9b3b5;
+  --rule: #34403f;
+  --glass: #4fb6b5;
+  --glass-ink: #0d1517;
+  --glass-soft: #20393a;
+  --warn: #f08a5d;
+  --warn-soft: #3a2519;
+  --ok: #8fcf95;
+  --ok-soft: #1f3322;
+  --oil: #c99b2e;
+  --series-1: #4fb6b5;
+  --series-2: #f08a5d;
+  --series-3: #b49be0;
+  --series-4: #d8b75a;
+  --shadow: none;
+  color-scheme: dark;
+}
+
+/* Projector mode: everything 1.4× */
+:root.projector {
+  --scale: 1.4;
+}

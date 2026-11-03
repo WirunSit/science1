@@ -1,0 +1,205 @@
+# แหล่งข้อมูลเดียวของโครงสร้างรายวิชา: หน่วย บท เรื่อง ชั่วโมง ตัวชี้วัด ลิงก์คลิป และสถานี Web Lab
+# ถ้อยคำและเลขตัวชี้วัด: ครูยืนยันแล้วว่าตรงกับคำอธิบายรายวิชาของโรงเรียน (2 พ.ย. 2569)
+
+course:
+  code: ว21102
+  hours: 60
+  hoursPerWeek: 3
+  weeks: 20
+
+indicators:
+  verified: true
+  source: หลักสูตรแกนกลางการศึกษาขั้นพื้นฐาน พ.ศ. 2551 (ฉบับปรับปรุง พ.ศ. 2560) — ครูยืนยันกับคำอธิบายรายวิชาของโรงเรียน
+  items:
+    - id: "ว 2.3 ม.1/1"
+      text: วิเคราะห์ แปลความหมายข้อมูล และคำนวณปริมาณความร้อนที่ทำให้สสารเปลี่ยนอุณหภูมิและเปลี่ยนสถานะ โดยใช้สมการ Q = mcΔt และ Q = mL
+    - id: "ว 2.3 ม.1/2"
+      text: สร้างแบบจำลองที่อธิบายการขยายตัวหรือหดตัวของสสารเนื่องจากได้รับหรือสูญเสียความร้อน
+    - id: "ว 2.3 ม.1/3"
+      text: ตระหนักถึงประโยชน์ของความรู้ของการหดและขยายตัวของสสารเนื่องจากความร้อน โดยวิเคราะห์สถานการณ์ปัญหาและเสนอแนะวิธีการนำความรู้มาแก้ปัญหาในชีวิตประจำวัน
+      attitude: true
+    - id: "ว 2.3 ม.1/4"
+      text: วิเคราะห์สถานการณ์การถ่ายโอนความร้อนและคำนวณปริมาณความร้อนที่ถ่ายโอนระหว่างสสารจนเกิดสมดุลความร้อนโดยใช้สมการ Q สูญเสีย = Q ได้รับ
+    - id: "ว 2.3 ม.1/5"
+      text: สร้างแบบจำลองที่อธิบายการถ่ายโอนความร้อนโดยการนำความร้อน การพาความร้อน การแผ่รังสีความร้อน
+    - id: "ว 2.3 ม.1/6"
+      text: ออกแบบ เลือกใช้ และสร้างอุปกรณ์เพื่อแก้ปัญหาในชีวิตประจำวันโดยใช้ความรู้เกี่ยวกับการถ่ายโอนความร้อน
+    - id: "ว 3.2 ม.1/1"
+      text: เปรียบเทียบประโยชน์ของบรรยากาศแต่ละชั้น โดยใช้ข้อมูลที่รวบรวมได้
+    - id: "ว 3.2 ม.1/2"
+      text: อธิบายปัจจัยที่มีผลต่อการเปลี่ยนแปลงองค์ประกอบของลมฟ้าอากาศ จากข้อมูลที่รวบรวมได้
+    - id: "ว 3.2 ม.1/3"
+      text: เปรียบเทียบกระบวนการเกิดพายุฝนฟ้าคะนองและพายุหมุนเขตร้อน และผลที่มีต่อสิ่งมีชีวิตและสิ่งแวดล้อม รวมทั้งนำเสนอแนวทางการปฏิบัติตนให้เหมาะสมและปลอดภัย
+    - id: "ว 3.2 ม.1/4"
+      text: อธิบายการพยากรณ์อากาศ และพยากรณ์อากาศอย่างง่ายจากข้อมูลที่รวบรวมได้
+    - id: "ว 3.2 ม.1/5"
+      text: ตระหนักถึงคุณค่าของการพยากรณ์อากาศ โดยนำเสนอแนวทางการปฏิบัติตนและการใช้ประโยชน์จากคำพยากรณ์อากาศ
+      attitude: true
+    - id: "ว 3.2 ม.1/6"
+      text: อธิบายสถานการณ์และผลกระทบการเปลี่ยนแปลงภูมิอากาศโลกจากข้อมูลที่รวบรวมได้
+    - id: "ว 3.2 ม.1/7"
+      text: ตระหนักถึงผลกระทบของการเปลี่ยนแปลงภูมิอากาศโลก โดยนำเสนอแนวทางการปฏิบัติตนภายใต้การเปลี่ยนแปลงภูมิอากาศโลก
+      attitude: true
+
+# การตัดสินใจด้านการสอนของครู (2 พ.ย. 2569)
+teachingScope:
+  temperatureUnits: สอนเพียงพื้นฐาน ให้รู้จัก °C, K, °F และเทียบจุดเยือกแข็ง/จุดเดือดของน้ำ ไม่ฝึกแปลงหน่วยหนัก
+  sublimation: สอนเพียงพื้นฐานเป็นความรู้เสริม (ลูกเหม็น การบูร น้ำแข็งแห้ง) ไม่ลงลึก
+  labEquipment: เครื่องแก้ว, ชุดให้ความร้อน, เทอร์โมมิเตอร์ (ไม่มีลูกเหล็กกับห่วง ไม่มีบารอมิเตอร์)
+  studentDevice: โทรศัพท์ + Google Chrome
+
+units:
+  - id: U5
+    title: พลังงานความร้อน
+    chapters:
+      - id: U5C1
+        title: ความร้อนกับการเปลี่ยนแปลงของสาร
+        hours: 16
+        app: heat-lab
+        appTitle: Heat Lab ห้องทดลองความร้อน
+        indicators: ["ว 2.3 ม.1/1", "ว 2.3 ม.1/2", "ว 2.3 ม.1/3"]
+        lessons:
+          - id: U5C1-L1
+            title: แบบจำลองอนุภาคของสสารในแต่ละสถานะ
+            hours: 2
+            weeks: [1]
+            indicators: ["ว 2.3 ม.1/1", "ว 2.3 ม.1/2"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-001/
+            stations: [particle-box]
+          - id: U5C1-L2
+            title: ความร้อนกับการเปลี่ยนอุณหภูมิของสสาร
+            hours: 5
+            weeks: [1, 2, 3]
+            indicators: ["ว 2.3 ม.1/1"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-002/
+            stations: [heater-bench]
+          - id: U5C1-L3
+            title: ความร้อนกับการขยายหรือหดตัวของสสาร
+            hours: 4
+            weeks: [3, 4]
+            indicators: ["ว 2.3 ม.1/2", "ว 2.3 ม.1/3"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-004/
+            stations: [expand-it]
+          - id: U5C1-L4
+            title: ความร้อนกับการเปลี่ยนสถานะของสสาร
+            hours: 5
+            weeks: [4, 5]
+            indicators: ["ว 2.3 ม.1/1"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-005/
+            stations: [phase-graph]
+      - id: U5C2
+        title: การถ่ายโอนความร้อน
+        hours: 12
+        app: heat-transfer-studio
+        appTitle: Heat Transfer Studio สตูดิโอการถ่ายโอนความร้อน
+        indicators: ["ว 2.3 ม.1/4", "ว 2.3 ม.1/5", "ว 2.3 ม.1/6"]
+        lessons:
+          - id: U5C2-L1
+            title: การนำความร้อน
+            hours: 2
+            weeks: [6]
+            indicators: ["ว 2.3 ม.1/5"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-007/
+            stations: [conduction-rod]
+          - id: U5C2-L2
+            title: การพาความร้อนและการแผ่รังสีความร้อน
+            hours: 3
+            weeks: [6]
+            indicators: ["ว 2.3 ม.1/5"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-008/
+            stations: [convection-pot, radiation-cans]
+          - id: U5C2-L3
+            title: สมดุลความร้อน
+            hours: 4
+            weeks: [7]
+            indicators: ["ว 2.3 ม.1/4"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-009/
+            stations: [thermal-mixer]
+          - id: U5C2-L4
+            title: การนำความรู้ไปใช้ (โครงงาน STEM ออกแบบอุปกรณ์)
+            hours: 3
+            weeks: [8]
+            indicators: ["ว 2.3 ม.1/6"]
+            clip: null
+            stations: [cool-box]
+    review:
+      hours: 3
+      weeks: [9]
+      link: http://ipst.me/sci-m1u05
+  - id: U6
+    title: กระบวนการเปลี่ยนแปลงลมฟ้าอากาศ
+    chapters:
+      - id: U6C1
+        title: ลมฟ้าอากาศรอบตัว
+        hours: 18
+        app: weather-station
+        appTitle: Weather Station สถานีลมฟ้าอากาศ
+        indicators: ["ว 3.2 ม.1/1", "ว 3.2 ม.1/2", "ว 3.2 ม.1/4", "ว 3.2 ม.1/5"]
+        lessons:
+          - id: U6C1-L1
+            title: บรรยากาศของเรา
+            hours: 3
+            weeks: [10]
+            indicators: ["ว 3.2 ม.1/1"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-010/
+            stations: [atmosphere-elevator]
+          - id: U6C1-L2
+            title: อุณหภูมิอากาศ
+            hours: 3
+            weeks: [11]
+            indicators: ["ว 3.2 ม.1/2"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-011/
+            stations: [sun-angle]
+          - id: U6C1-L3
+            title: ความกดอากาศและลม
+            hours: 4
+            weeks: [12]
+            indicators: ["ว 3.2 ม.1/2"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-012/
+            stations: [wind-maker]
+          - id: U6C1-L4
+            title: ความชื้น
+            hours: 3
+            weeks: [13]
+            indicators: ["ว 3.2 ม.1/2"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-013/
+            stations: [humidity-box]
+          - id: U6C1-L5
+            title: เมฆและฝน
+            hours: 2
+            weeks: [14]
+            indicators: ["ว 3.2 ม.1/2"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-014/
+            stations: [cloud-lift]
+          - id: U6C1-L6
+            title: การพยากรณ์อากาศ
+            hours: 3
+            weeks: [15]
+            indicators: ["ว 3.2 ม.1/4", "ว 3.2 ม.1/5"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-015/
+            stations: [forecast-room]
+      - id: U6C2
+        title: มนุษย์และการเปลี่ยนแปลงลมฟ้าอากาศ
+        hours: 8
+        app: storm-climate
+        appTitle: Storm & Climate พายุและภูมิอากาศ
+        indicators: ["ว 3.2 ม.1/3", "ว 3.2 ม.1/6", "ว 3.2 ม.1/7"]
+        lessons:
+          - id: U6C2-L1
+            title: พายุ
+            hours: 4
+            weeks: [16, 17]
+            indicators: ["ว 3.2 ม.1/3"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-016/
+            stations: [storm-builder]
+          - id: U6C2-L2
+            title: การเปลี่ยนแปลงภูมิอากาศโลก
+            hours: 4
+            weeks: [17, 18]
+            indicators: ["ว 3.2 ม.1/6", "ว 3.2 ม.1/7"]
+            clip: https://proj14.ipst.ac.th/m1/m1-sci-book2/sci-m1b2-017/
+            stations: [greenhouse-earth, my-footprint]
+    review:
+      hours: 3
+      weeks: [19]
+      link: http://ipst.me/sci-m1u06
