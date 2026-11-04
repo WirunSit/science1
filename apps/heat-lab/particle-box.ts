@@ -68,7 +68,11 @@ function makeBox(state: StateId): P[] {
   const ps: P[] = [];
   const add = (x: number, y: number) => ps.push({ x, y, vx: 0, vy: 0, hx: x, hy: y, ph: Math.random() * Math.PI * 2, trail: [] });
   if (state === 'solid') {
-    for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) add(28 + c * 11, BH - 12 - r * 11);
+    // Touching neighbours in neat rows and columns (spacing = one diameter), a block resting on the floor.
+    const gap = 2 * R + 0.6;
+    const cols = 6;
+    const left = (BW - (cols - 1) * gap) / 2;
+    for (let r = 0; r < 5; r++) for (let c = 0; c < cols; c++) add(left + c * gap, BH - R - 1 - r * gap);
   } else if (state === 'liquid') {
     for (let r = 0; r < 2; r++) for (let c = 0; c < 9; c++) add(8 + c * 10.5 + (r % 2) * 4, BH - 8 - r * 10);
   } else {
@@ -84,11 +88,13 @@ function makeBox(state: StateId): P[] {
 
 function stepBox(state: StateId, ps: P[], f: number, dt: number, time: number): void {
   if (state === 'solid') {
-    // Vibrate about the lattice site: wider and faster when hotter.
-    const amp = 1.1 * f;
+    // Vibrate in place about the lattice site: a small jiggle (well under the spacing, so rows stay neat),
+    // a little wider and much faster when hotter.
+    const amp = 0.4 + 0.25 * (f - 1);
+    const rate = 14 * f;
     for (const p of ps) {
-      p.x = p.hx + amp * Math.sin(time * 9 * f + p.ph);
-      p.y = p.hy + amp * Math.cos(time * 11 * f + p.ph * 1.7);
+      p.x = p.hx + amp * Math.sin(time * rate + p.ph);
+      p.y = p.hy + amp * Math.sin(time * rate * 1.3 + p.ph * 1.7);
     }
     return;
   }
